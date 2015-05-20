@@ -4,7 +4,7 @@ Gender
 Preview
 -------
 
-[Preview of Gender](http://show.askia.com/WebProd/cgi-bin/AskiaExt.dll?Action=StartSurvey&SurveyName=ADC2_Gender)
+[Preview of the Gender control](http://show.askia.com/WebProd/cgi-bin/AskiaExt.dll?Action=StartSurvey&SurveyName=ADC2_Gender)
         
 Tested in
 -----------
