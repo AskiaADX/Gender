@@ -1,0 +1,25 @@
+@charset "utf-8";
+.adc-gender_controlContainer {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+.adc-gender {
+    display: block;
+}
+.adc-gender .responseItem {
+    float: left;
+    overflow: hidden;
+}
+.adc-gender .imgWrapper {
+    overflow: hidden;
+}
+.adc-gender .responseText {
+    display: block;
+}
+.adc-gender label:hover, .adc-gender input:hover {
+    cursor: pointer;
+}
+.adc-gender .imgWrapper img, .adc-gender .responseText {
+    width: 100%;
+}

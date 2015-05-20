@@ -1,0 +1,292 @@
+/* @charset "utf-8"; */
+/* default.css */
+{%
+Dim fontSize = CurrentADC.PropValue("fontSize")
+Dim fontColour = CurrentADC.PropValue("fontColour")
+Dim controlWidth = CurrentADC.PropValue("controlWidth")
+Dim maxWidth = CurrentADC.PropValue("maxWidth")
+Dim controlAlign
+If (CurrentADC.PropValue("controlAlign") = "center" ) Then
+    controlAlign = "0 auto"
+ElseIf (CurrentADC.PropValue("controlAlign") = "right" ) Then
+    controlAlign = "0 0 0 auto"
+Else
+    controlAlign = "0 auto 0 0"
+EndIf
+Dim textAlign =CurrentADC.PropValue("textAlign")
+Dim borderRadius =CurrentADC.PropValue("borderRadius")
+Dim responseMaxWidth = CurrentADC.PropValue("responseMaxWidth")
+Dim responseMargin = CurrentADC.PropValue("responseMargin")
+Dim displayResponseText = CurrentADC.PropValue("displayResponseText")
+Dim responseTextPadding = CurrentADC.PropValue("responseTextPadding")
+
+Dim response1ColourPrimary =CurrentADC.PropValue("response1ColourPrimary")
+Dim response1ColourSecondary =CurrentADC.PropValue("response1ColourSecondary")
+Dim response1BorderColour =CurrentADC.PropValue("response1BorderColour")
+Dim response1BorderThickness =CurrentADC.PropValue("response1BorderThickness")
+Dim response1BorderStyle =CurrentADC.PropValue("response1BorderStyle")
+Dim response1DropShadow =CurrentADC.PropValue("response1DropShadow")
+
+Dim showResponse1HoverColour =CurrentADC.PropValue("showResponse1HoverColour")
+Dim response1HoverColourPrimary =CurrentADC.PropValue("response1HoverColourPrimary")
+Dim response1HoverColourSecondary =CurrentADC.PropValue("response1HoverColourSecondary")
+Dim showResponse1HoverBorder =CurrentADC.PropValue("showResponse1HoverBorder")
+Dim response1HoverBorderColour =CurrentADC.PropValue("response1HoverBorderColour")
+Dim response1HoverBorderThickness =CurrentADC.PropValue("response1HoverBorderThickness")
+Dim response1HoverBorderStyle =CurrentADC.PropValue("response1HoverBorderStyle")
+Dim response1HoverDropShadow =CurrentADC.PropValue("response1HoverDropShadow")
+
+Dim response1SelectedColourPrimary =CurrentADC.PropValue("response1SelectedColourPrimary")
+Dim response1SelectedColourSecondary =CurrentADC.PropValue("response1SelectedColourSecondary")
+Dim response1SelectedBorderColour =CurrentADC.PropValue("response1SelectedBorderColour")
+Dim response1SelectedBorderThickness =CurrentADC.PropValue("response1SelectedBorderThickness")
+Dim response1SelectedBorderStyle =CurrentADC.PropValue("response1SelectedBorderStyle")
+Dim response1SelectedDropShadow =CurrentADC.PropValue("response1SelectedDropShadow")
+
+Dim response2ColourPrimary =CurrentADC.PropValue("response2ColourPrimary")
+Dim response2ColourSecondary =CurrentADC.PropValue("response2ColourSecondary")
+Dim response2BorderColour =CurrentADC.PropValue("response2BorderColour")
+Dim response2BorderThickness =CurrentADC.PropValue("response2BorderThickness")
+Dim response2BorderStyle =CurrentADC.PropValue("response2BorderStyle")
+Dim response2DropShadow =CurrentADC.PropValue("response2DropShadow")
+
+Dim showResponse2HoverColour =CurrentADC.PropValue("showResponse2HoverColour")
+Dim response2HoverColourPrimary =CurrentADC.PropValue("response2HoverColourPrimary")
+Dim response2HoverColourSecondary =CurrentADC.PropValue("response2HoverColourSecondary")
+Dim showResponse2HoverBorder =CurrentADC.PropValue("showResponse2HoverBorder")
+Dim response2HoverBorderColour =CurrentADC.PropValue("response2HoverBorderColour")
+Dim response2HoverBorderThickness =CurrentADC.PropValue("response2HoverBorderThickness")
+Dim response2HoverBorderStyle =CurrentADC.PropValue("response2HoverBorderStyle")
+Dim response2HoverDropShadow =CurrentADC.PropValue("response2HoverDropShadow")
+
+Dim response2SelectedColourPrimary =CurrentADC.PropValue("response2SelectedColourPrimary")
+Dim response2SelectedColourSecondary =CurrentADC.PropValue("response2SelectedColourSecondary")
+Dim response2SelectedBorderColour =CurrentADC.PropValue("response2SelectedBorderColour")
+Dim response2SelectedBorderThickness =CurrentADC.PropValue("response2SelectedBorderThickness")
+Dim response2SelectedBorderStyle =CurrentADC.PropValue("response2SelectedBorderStyle")
+Dim response2SelectedDropShadow =CurrentADC.PropValue("response2SelectedDropShadow")
+%}
+#adc_{%= CurrentADC.InstanceId %} {
+    width: {%= controlWidth %};
+    max-width: {%= maxWidth %};
+    margin: {%= controlAlign %};
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem {
+    margin: {%= responseMargin %};
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem img, #adc_{%= CurrentADC.InstanceId %} .imgWrapper {
+    border-radius: {%= borderRadius %};
+}
+#adc_{%= CurrentADC.InstanceId %} .imgWrapper img, #adc_{%= CurrentADC.InstanceId %} .responseText {
+    max-width: {%= responseMaxWidth %};
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem input {
+    {% If (Browser.Support("javascript")) Then %}
+        display: none;
+    {% EndIf %}
+}
+#adc_{%= CurrentADC.InstanceId %} .responseText {
+    display: {%= displayResponseText %};
+    color: {%= fontColour.ToHexa() %};
+    font-size: {%= fontSize %};
+    text-align: {%= textAlign %};
+    padding: {%= responseTextPadding %};
+}
+
+/* First response */
+#adc_{%= CurrentADC.InstanceId %} .childOne {
+    background-color: {%= response1ColourPrimary.ToHexa() %};
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb({%= response1ColourPrimary %})), to(rgb({%= response1ColourSecondary %})));
+    background-image: -webkit-linear-gradient(top, rgb({%= response1ColourPrimary %}), rgb({%= response1ColourSecondary %}));
+    background-image: -moz-linear-gradient(top, rgb({%= response1ColourPrimary %}), rgb({%= response1ColourSecondary %}));
+    background-image: -o-linear-gradient(top, rgb({%= response1ColourPrimary %}), rgb({%= response1ColourSecondary %}));
+    background-image: -ms-linear-gradient(top, rgb({%= response1ColourPrimary %}), rgb({%= response1ColourSecondary %}));
+    background-image: linear-gradient(top, rgb({%= response1ColourPrimary %}), rgb({%= response1ColourSecondary %}));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response1ColourPrimary.ToHexa() %}', EndColorStr='{%= response1ColourSecondary.ToHexa() %}');
+    {% If (response1BorderThickness = "none") Then %}
+        border: none;
+    {% Else %}
+        border: {%= response1BorderThickness %} {%= response1BorderStyle %} rgb({%= response1BorderColour %});
+    {% EndIf %}
+    transition: all ease-in-out .2s;
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(1) label img {
+    background-color: {%= response1ColourPrimary.ToHexa() %};
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb({%= response1ColourPrimary %})), to(rgb({%= response1ColourSecondary %})));
+    background-image: -webkit-linear-gradient(top, rgb({%= response1ColourPrimary %}), rgb({%= response1ColourSecondary %}));
+    background-image: -moz-linear-gradient(top, rgb({%= response1ColourPrimary %}), rgb({%= response1ColourSecondary %}));
+    background-image: -o-linear-gradient(top, rgb({%= response1ColourPrimary %}), rgb({%= response1ColourSecondary %}));
+    background-image: -ms-linear-gradient(top, rgb({%= response1ColourPrimary %}), rgb({%= response1ColourSecondary %}));
+    background-image: linear-gradient(top, rgb({%= response1ColourPrimary %}), rgb({%= response1ColourSecondary %}));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response1ColourPrimary.ToHexa() %}', EndColorStr='{%= response1ColourSecondary.ToHexa() %}');
+    {% If (response1BorderThickness = "none") Then %}
+        border: none;
+    {% Else %}
+        border: {%= response1BorderThickness %} {%= response1BorderStyle %} rgb({%= response1BorderColour %});
+    {% EndIf %}
+    transition: all ease-in-out .2s;
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(1) label .imgWrapper {
+    box-shadow: {%= response1DropShadow %};
+}
+#adc_{%= CurrentADC.InstanceId %} .childOneHover {
+    {% If (showResponse1HoverColour = "1") Then %}
+        background-color: {%= response1HoverColourPrimary.ToHexa() %};
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgb({%= response1HoverColourPrimary %})), to(rgb({%= response1HoverColourSecondary %})));
+        background-image: -webkit-linear-gradient(top, rgb({%= response1HoverColourPrimary %}), rgb({%= response1HoverColourSecondary %}));
+        background-image: -moz-linear-gradient(top, rgb({%= response1HoverColourPrimary %}), rgb({%= response1HoverColourSecondary %}));
+        background-image: -o-linear-gradient(top, rgb({%= response1HoverColourPrimary %}), rgb({%= response1HoverColourSecondary %}));
+        background-image: -ms-linear-gradient(top, rgb({%= response1HoverColourPrimary %}), rgb({%= response1HoverColourSecondary %}));
+        background-image: linear-gradient(top, rgb({%= response1HoverColourPrimary %}), rgb({%= response1HoverColourSecondary %}));
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response1HoverColourPrimary.ToHexa() %}', EndColorStr='{%= response1HoverColourSecondary.ToHexa() %}');
+    {% EndIf %}
+    {% If (showResponse1HoverBorder = "1") Then %}
+        border: {%= response1HoverBorderThickness %} {%= response1HoverBorderStyle %} rgb({%= response1HoverBorderColour %});
+    {% Else %}
+        border: {%= response1BorderThickness %} {%= response1BorderStyle %} rgb({%= response1BorderColour %});
+    {% EndIf %}
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(1) label:hover img {
+    {% If (showResponse1HoverColour = "1") Then %}
+        background-color: {%= response1HoverColourPrimary.ToHexa() %};
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgb({%= response1HoverColourPrimary %})), to(rgb({%= response1HoverColourSecondary %})));
+        background-image: -webkit-linear-gradient(top, rgb({%= response1HoverColourPrimary %}), rgb({%= response1HoverColourSecondary %}));
+        background-image: -moz-linear-gradient(top, rgb({%= response1HoverColourPrimary %}), rgb({%= response1HoverColourSecondary %}));
+        background-image: -o-linear-gradient(top, rgb({%= response1HoverColourPrimary %}), rgb({%= response1HoverColourSecondary %}));
+        background-image: -ms-linear-gradient(top, rgb({%= response1HoverColourPrimary %}), rgb({%= response1HoverColourSecondary %}));
+        background-image: linear-gradient(top, rgb({%= response1HoverColourPrimary %}), rgb({%= response1HoverColourSecondary %}));
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response1HoverColourPrimary.ToHexa() %}', EndColorStr='{%= response1HoverColourSecondary.ToHexa() %}');
+    {% EndIf %}
+    {% If (showResponse1HoverBorder = "1") Then %}
+        border: {%= response1HoverBorderThickness %} {%= response1HoverBorderStyle %} rgb({%= response1HoverBorderColour %});
+    {% Else %}
+        border: {%= response1BorderThickness %} {%= response1BorderStyle %} rgb({%= response1BorderColour %});
+    {% EndIf %}
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(1) label:hover .imgWrapper {
+    box-shadow: {%= response1HoverDropShadow %};
+}
+#adc_{%= CurrentADC.InstanceId %} .childOneSelected {
+    background-color: {%= response1SelectedColourPrimary.ToHexa() %};
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb({%= response1SelectedColourPrimary %})), to(rgb({%= response1SelectedColourSecondary %})));
+    background-image: -webkit-linear-gradient(top, rgb({%= response1SelectedColourPrimary %}), rgb({%= response1SelectedColourSecondary %}));
+    background-image: -moz-linear-gradient(top, rgb({%= response1SelectedColourPrimary %}), rgb({%= response1SelectedColourSecondary %}));
+    background-image: -o-linear-gradient(top, rgb({%= response1SelectedColourPrimary %}), rgb({%= response1SelectedColourSecondary %}));
+    background-image: -ms-linear-gradient(top, rgb({%= response1SelectedColourPrimary %}), rgb({%= response1SelectedColourSecondary %}));
+    background-image: linear-gradient(top, rgb({%= response1SelectedColourPrimary %}), rgb({%= response1SelectedColourSecondary %}));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response1SelectedColourPrimary.ToHexa() %}', EndColorStr='{%= response1SelectedColourSecondary.ToHexa() %}');
+    border: {%= response1SelectedBorderThickness %} {%= response1SelectedBorderStyle %} rgb({%= response1SelectedBorderColour %});
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(1) input:checked ~ label img {
+    background-color: {%= response1SelectedColourPrimary.ToHexa() %};
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb({%= response1SelectedColourPrimary %})), to(rgb({%= response1SelectedColourSecondary %})));
+    background-image: -webkit-linear-gradient(top, rgb({%= response1SelectedColourPrimary %}), rgb({%= response1SelectedColourSecondary %}));
+    background-image: -moz-linear-gradient(top, rgb({%= response1SelectedColourPrimary %}), rgb({%= response1SelectedColourSecondary %}));
+    background-image: -o-linear-gradient(top, rgb({%= response1SelectedColourPrimary %}), rgb({%= response1SelectedColourSecondary %}));
+    background-image: -ms-linear-gradient(top, rgb({%= response1SelectedColourPrimary %}), rgb({%= response1SelectedColourSecondary %}));
+    background-image: linear-gradient(top, rgb({%= response1SelectedColourPrimary %}), rgb({%= response1SelectedColourSecondary %}));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response1SelectedColourPrimary.ToHexa() %}', EndColorStr='{%= response1SelectedColourSecondary.ToHexa() %}');
+    border: {%= response1SelectedBorderThickness %} {%= response1SelectedBorderStyle %} rgb({%= response1SelectedBorderColour %});
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(1) input:checked ~ label .imgWrapper {
+    box-shadow: {%= response1SelectedDropShadow %};
+}
+
+/* Second response */
+#adc_{%= CurrentADC.InstanceId %} .childTwo {
+    background-color: {%= response2ColourPrimary.ToHexa() %};
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb({%= response2ColourPrimary %})), to(rgb({%= response2ColourSecondary %})));
+    background-image: -webkit-linear-gradient(top, rgb({%= response2ColourPrimary %}), rgb({%= response2ColourSecondary %}));
+    background-image: -moz-linear-gradient(top, rgb({%= response2ColourPrimary %}), rgb({%= response2ColourSecondary %}));
+    background-image: -o-linear-gradient(top, rgb({%= response2ColourPrimary %}), rgb({%= response2ColourSecondary %}));
+    background-image: -ms-linear-gradient(top, rgb({%= response2ColourPrimary %}), rgb({%= response2ColourSecondary %}));
+    background-image: linear-gradient(top, rgb({%= response2ColourPrimary %}), rgb({%= response2ColourSecondary %}));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response2ColourPrimary.ToHexa() %}', EndColorStr='{%= response2ColourSecondary.ToHexa() %}');
+    {% If (response2BorderThickness = "none") Then %}
+        border: none;
+    {% Else %}
+        border: {%= response2BorderThickness %} {%= response2BorderStyle %} rgb({%= response2BorderColour %});
+    {% EndIf %}
+    transition: all ease-in-out .2s;
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(2) label img {
+    background-color: {%= response2ColourPrimary.ToHexa() %};
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb({%= response2ColourPrimary %})), to(rgb({%= response2ColourSecondary %})));
+    background-image: -webkit-linear-gradient(top, rgb({%= response2ColourPrimary %}), rgb({%= response2ColourSecondary %}));
+    background-image: -moz-linear-gradient(top, rgb({%= response2ColourPrimary %}), rgb({%= response2ColourSecondary %}));
+    background-image: -o-linear-gradient(top, rgb({%= response2ColourPrimary %}), rgb({%= response2ColourSecondary %}));
+    background-image: -ms-linear-gradient(top, rgb({%= response2ColourPrimary %}), rgb({%= response2ColourSecondary %}));
+    background-image: linear-gradient(top, rgb({%= response2ColourPrimary %}), rgb({%= response2ColourSecondary %}));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response2ColourPrimary.ToHexa() %}', EndColorStr='{%= response2ColourSecondary.ToHexa() %}');
+    {% If (response2BorderThickness = "none") Then %}
+        border: none;
+    {% Else %}
+        border: {%= response2BorderThickness %} {%= response2BorderStyle %} rgb({%= response2BorderColour %});
+    {% EndIf %}
+    transition: all ease-in-out .2s;
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(2) label .imgWrapper {
+    box-shadow: {%= response2DropShadow %};
+}
+#adc_{%= CurrentADC.InstanceId %} .childTwoHover {
+    {% If (showResponse2HoverColour = "1") Then %}
+        background-color: {%= response2HoverColourPrimary.ToHexa() %};
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgb({%= response2HoverColourPrimary %})), to(rgb({%= response2HoverColourSecondary %})));
+        background-image: -webkit-linear-gradient(top, rgb({%= response2HoverColourPrimary %}), rgb({%= response2HoverColourSecondary %}));
+        background-image: -moz-linear-gradient(top, rgb({%= response2HoverColourPrimary %}), rgb({%= response2HoverColourSecondary %}));
+        background-image: -o-linear-gradient(top, rgb({%= response2HoverColourPrimary %}), rgb({%= response2HoverColourSecondary %}));
+        background-image: -ms-linear-gradient(top, rgb({%= response2HoverColourPrimary %}), rgb({%= response2HoverColourSecondary %}));
+        background-image: linear-gradient(top, rgb({%= response2HoverColourPrimary %}), rgb({%= response2HoverColourSecondary %}));
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response2HoverColourPrimary.ToHexa() %}', EndColorStr='{%= response2HoverColourSecondary.ToHexa() %}');
+    {% EndIf %}
+    {% If (showResponse2HoverBorder = "1") Then %}
+        border: {%= response2HoverBorderThickness %} {%= response2HoverBorderStyle %} rgb({%= response2HoverBorderColour %});
+    {% Else %}
+        border: {%= response2BorderThickness %} {%= response2BorderStyle %} rgb({%= response2BorderColour %});
+    {% EndIf %}
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(2) label:hover img {
+    {% If (showResponse2HoverColour = "1") Then %}
+        background-color: {%= response2HoverColourPrimary.ToHexa() %};
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgb({%= response2HoverColourPrimary %})), to(rgb({%= response2HoverColourSecondary %})));
+        background-image: -webkit-linear-gradient(top, rgb({%= response2HoverColourPrimary %}), rgb({%= response2HoverColourSecondary %}));
+        background-image: -moz-linear-gradient(top, rgb({%= response2HoverColourPrimary %}), rgb({%= response2HoverColourSecondary %}));
+        background-image: -o-linear-gradient(top, rgb({%= response2HoverColourPrimary %}), rgb({%= response2HoverColourSecondary %}));
+        background-image: -ms-linear-gradient(top, rgb({%= response2HoverColourPrimary %}), rgb({%= response2HoverColourSecondary %}));
+        background-image: linear-gradient(top, rgb({%= response2HoverColourPrimary %}), rgb({%= response2HoverColourSecondary %}));
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response2HoverColourPrimary.ToHexa() %}', EndColorStr='{%= response2HoverColourSecondary.ToHexa() %}');
+    {% EndIf %}
+    {% If (showResponse2HoverBorder = "1") Then %}
+        border: {%= response2HoverBorderThickness %} {%= response2HoverBorderStyle %} rgb({%= response2HoverBorderColour %});
+    {% Else %}
+        border: {%= response2BorderThickness %} {%= response2BorderStyle %} rgb({%= response2BorderColour %});
+    {% EndIf %}
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(2) label:hover .imgWrapper {
+    box-shadow: {%= response2HoverDropShadow %};
+}
+#adc_{%= CurrentADC.InstanceId %} .childTwoSelected {
+    background-color: {%= response2SelectedColourPrimary.ToHexa() %};
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb({%= response2SelectedColourPrimary %})), to(rgb({%= response2SelectedColourSecondary %})));
+    background-image: -webkit-linear-gradient(top, rgb({%= response2SelectedColourPrimary %}), rgb({%= response2SelectedColourSecondary %}));
+    background-image: -moz-linear-gradient(top, rgb({%= response2SelectedColourPrimary %}), rgb({%= response2SelectedColourSecondary %}));
+    background-image: -o-linear-gradient(top, rgb({%= response2SelectedColourPrimary %}), rgb({%= response2SelectedColourSecondary %}));
+    background-image: -ms-linear-gradient(top, rgb({%= response2SelectedColourPrimary %}), rgb({%= response2SelectedColourSecondary %}));
+    background-image: linear-gradient(top, rgb({%= response2SelectedColourPrimary %}), rgb({%= response2SelectedColourSecondary %}));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response2SelectedColourPrimary.ToHexa() %}', EndColorStr='{%= response2SelectedColourSecondary.ToHexa() %}');
+    border: {%= response2SelectedBorderThickness %} {%= response2SelectedBorderStyle %} rgb({%= response2SelectedBorderColour %});
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(2) input:checked  ~ label img {
+    background-color: {%= response2SelectedColourPrimary.ToHexa() %};
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb({%= response2SelectedColourPrimary %})), to(rgb({%= response2SelectedColourSecondary %})));
+    background-image: -webkit-linear-gradient(top, rgb({%= response2SelectedColourPrimary %}), rgb({%= response2SelectedColourSecondary %}));
+    background-image: -moz-linear-gradient(top, rgb({%= response2SelectedColourPrimary %}), rgb({%= response2SelectedColourSecondary %}));
+    background-image: -o-linear-gradient(top, rgb({%= response2SelectedColourPrimary %}), rgb({%= response2SelectedColourSecondary %}));
+    background-image: -ms-linear-gradient(top, rgb({%= response2SelectedColourPrimary %}), rgb({%= response2SelectedColourSecondary %}));
+    background-image: linear-gradient(top, rgb({%= response2SelectedColourPrimary %}), rgb({%= response2SelectedColourSecondary %}));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response2SelectedColourPrimary.ToHexa() %}', EndColorStr='{%= response2SelectedColourSecondary.ToHexa() %}');
+    border: {%= response2SelectedBorderThickness %} {%= response2SelectedBorderStyle %} rgb({%= response2SelectedBorderColour %});
+}
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(2) input:checked ~ label .imgWrapper {
+    box-shadow: {%= response2SelectedDropShadow %};
+}

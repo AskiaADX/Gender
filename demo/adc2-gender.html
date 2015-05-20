@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui"/>
+    <title>Gender ADC</title>
+
+    <!--
+           Static style
+    -->
+    <link rel="stylesheet" href="../resources/static/styles.css" />
+
+    <!--
+               First ADC instance
+               Dynamic style generated
+    -->
+    <style>
+        #adc_1 {
+            width: 100%;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+        #adc_1 .responseItem {
+            margin: 0 3px;
+        }
+        #adc_1 .responseItem img, #adc_1 .imgWrapper {
+            border-radius: 2px;
+        }
+        #adc_1 .imgWrapper img, #adc_1 .responseText {
+            max-width: 100px;
+        }
+        #adc_1 .responseItem input {
+            /*display: none;*/
+        }
+        #adc_1 .responseText {
+            color: #444;
+            font-size: 16px;
+            text-align: center;
+            padding: 0;
+        }
+        #adc_1 .childOne {
+            background-color: #fff;
+            border: 1px solid #444;
+            transition: all ease-in-out .2s;
+        }
+        #adc_1 .responseItem:nth-child(1) label img {
+            background-color: #fff;
+            border: 1px solid #444;
+            transition: all ease-in-out .2s;
+        }
+        #adc_1 .responseItem:nth-child(1) label .imgWrapper  {
+            box-shadow: 0px 2px 2px 0px #999;
+        }
+        #adc_1 .childOneHover {
+            background-color: #f3f3f3;
+            border: 1px solid #444;
+        }
+        #adc_1 .responseItem:nth-child(1) label:hover img {
+            background-color: #f3f3f3;
+            border: 1px solid #444;
+        }
+        #adc_1 .responseItem:nth-child(1) label:hover .imgWrapper  {
+            box-shadow: 0px 2px 2px 0px #999;
+        }
+        #adc_1 .childOneSelected {
+            background-color: #ddefff;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(221, 239, 255)), to(rgb(211, 229, 244)));
+            background-image: -webkit-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: -moz-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: -o-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: -ms-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ddefff', EndColorStr='#d3e5f4');
+            border: 1px solid #444;
+        }
+        #adc_1 .responseItem:nth-child(1) input:checked ~ label img {
+            background-color: #ddefff;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(221, 239, 255)), to(rgb(211, 229, 244)));
+            background-image: -webkit-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: -moz-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: -o-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: -ms-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ddefff', EndColorStr='#d3e5f4');
+            border: 1px solid #444;
+        }
+        #adc_1 .responseItem:nth-child(1) input:checked ~ label .imgWrapper  {
+            box-shadow: 0px 2px 2px 0px #999;
+        }
+        #adc_1 .childTwo {
+            background-color: #fff;
+            border: 1px solid #444;
+            transition: all ease-in-out .2s;
+        }
+        #adc_1 .responseItem:nth-child(2) label img {
+            background-color: #fff;
+            border: 1px solid #444;
+            transition: all ease-in-out .2s;
+        }
+        #adc_1 .responseItem:nth-child(2) label .imgWrapper  {
+            box-shadow: 0px 2px 2px 0px #999;
+        }
+        #adc_1 .childTwoHover {
+            background-color: #f3f3f3;
+            border: 1px solid #444;
+        }
+        #adc_1 .responseItem:nth-child(2) label:hover img {
+            background-color: #f3f3f3;
+            border: 1px solid #444;
+        }
+        #adc_1 .responseItem:nth-child(2) label:hover .imgWrapper  {
+            box-shadow: 0px 2px 2px 0px #999;
+        }
+        #adc_1 .childTwoSelected {
+            background-color: #ffebf8;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 235, 248)), to(rgb(246, 226, 239)));
+            background-image: -webkit-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: -moz-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: -o-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: -ms-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffebf8', EndColorStr='#f6e2ef');
+            border: 1px solid #444;
+        }
+        #adc_1 .responseItem:nth-child(2) input:checked  ~ label img {
+            background-color: #ffebf8;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 235, 248)), to(rgb(246, 226, 239)));
+            background-image: -webkit-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: -moz-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: -o-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: -ms-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffebf8', EndColorStr='#f6e2ef');
+            border: 1px solid #444;
+        }
+        #adc_1 .responseItem:nth-child(2) input:checked ~ label .imgWrapper  {
+            box-shadow: 0px 2px 2px 0px #999;
+        }
+    </style>
+
+    <!--
+           First ADC instance
+           Dynamic javascript generated
+    -->
+    <script type="text/javascript">
+        // Preload images used by the adc control
+        (function adc_1_preloader(arrPathImg) {
+            var imageObj = new Image();
+            for (var i = 0, l = arrPathImg.length; i < l; i++) {
+                imageObj.src = arrPathImg[i];
+            }
+        }(["../resources/static/body-gender-male-dark.png", "../resources/static/body-gender-female-dark.png"]));
+    </script>
+
+    <!--
+           Second ADC instance
+           Dynamic style generated
+    -->
+    <style>
+        #adc_2 {
+            width: 100%;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+        #adc_2 .responseItem {
+            margin: 0 3px;
+        }
+        #adc_2 .responseItem img, #adc_2 .imgWrapper {
+            border-radius: 2px;
+        }
+        #adc_2 .imgWrapper img, #adc_2 .responseText {
+            max-width: 100px;
+        }
+        #adc_2 .responseItem input {
+            /*display: none;*/
+        }
+        #adc_2 .responseText {
+            color: #444;
+            font-size: 16px;
+            text-align: center;
+            padding: 0;
+        }
+        #adc_2 .childOne {
+            background-color: #fff;
+            border: 1px solid #444;
+            transition: all ease-in-out .2s;
+        }
+        #adc_2 .responseItem:nth-child(1) label img {
+            background-color: #fff;
+            border: 1px solid #444;
+            transition: all ease-in-out .2s;
+        }
+        #adc_2 .responseItem:nth-child(1) label .imgWrapper  {
+            box-shadow: 0px 2px 2px 0px #999;
+        }
+        #adc_2 .childOneHover {
+            background-color: #f3f3f3;
+            border: 1px solid #444;
+        }
+        #adc_2 .responseItem:nth-child(1) label:hover img {
+            background-color: #f3f3f3;
+            border: 1px solid #444;
+        }
+        #adc_2 .responseItem:nth-child(1) label:hover .imgWrapper  {
+            box-shadow: 0px 2px 2px 0px #999;
+        }
+        #adc_2 .childOneSelected {
+            background-color: #ddefff;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(221, 239, 255)), to(rgb(211, 229, 244)));
+            background-image: -webkit-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: -moz-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: -o-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: -ms-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ddefff', EndColorStr='#d3e5f4');
+            border: 1px solid #444;
+        }
+        #adc_2 .responseItem:nth-child(1) input:checked ~ label img {
+            background-color: #ddefff;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(221, 239, 255)), to(rgb(211, 229, 244)));
+            background-image: -webkit-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: -moz-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: -o-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: -ms-linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            background-image: linear-gradient(top, rgb(221, 239, 255), rgb(211, 229, 244));
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ddefff', EndColorStr='#d3e5f4');
+            border: 1px solid #444;
+        }
+        #adc_2 .responseItem:nth-child(1) input:checked ~ label .imgWrapper  {
+            box-shadow: 0px 2px 2px 0px #999;
+        }
+        #adc_2 .childTwo {
+            background-color: #fff;
+            border: 1px solid #444;
+            transition: all ease-in-out .2s;
+        }
+        #adc_2 .responseItem:nth-child(2) label img {
+            background-color: #fff;
+            border: 1px solid #444;
+            transition: all ease-in-out .2s;
+        }
+        #adc_2 .responseItem:nth-child(2) label .imgWrapper  {
+            box-shadow: 0px 2px 2px 0px #999;
+        }
+        #adc_2 .childTwoHover {
+            background-color: #f3f3f3;
+            border: 1px solid #444;
+        }
+        #adc_2 .responseItem:nth-child(2) label:hover img {
+            background-color: #f3f3f3;
+            border: 1px solid #444;
+        }
+        #adc_2 .responseItem:nth-child(2) label:hover .imgWrapper  {
+            box-shadow: 0px 2px 2px 0px #999;
+        }
+        #adc_2 .childTwoSelected {
+            background-color: #ffebf8;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 235, 248)), to(rgb(246, 226, 239)));
+            background-image: -webkit-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: -moz-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: -o-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: -ms-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffebf8', EndColorStr='#f6e2ef');
+            border: 1px solid #444;
+        }
+        #adc_2 .responseItem:nth-child(2) input:checked  ~ label img {
+            background-color: #ffebf8;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 235, 248)), to(rgb(246, 226, 239)));
+            background-image: -webkit-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: -moz-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: -o-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: -ms-linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            background-image: linear-gradient(top, rgb(255, 235, 248), rgb(246, 226, 239));
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffebf8', EndColorStr='#f6e2ef');
+            border: 1px solid #444;
+        }
+        #adc_2 .responseItem:nth-child(2) input:checked ~ label .imgWrapper  {
+            box-shadow: 0px 2px 2px 0px #999;
+        }
+    </style>
+
+    <!--
+       Second ADC instance
+       Dynamic javascript generated
+-->
+    <script type="text/javascript">
+        // Preload images used by the adc control
+        (function adc_2_preloader(arrPathImg) {
+            var imageObj = new Image();
+            for (var i = 0, l = arrPathImg.length; i < l; i++) {
+                imageObj.src = arrPathImg[i];
+            }
+        }(["../resources/static/icon-gender-male-dark.png", "../resources/static/icon-gender-female-dark.png"]));
+    </script>
+</head>
+
+<body>
+
+<div class="adc-gender_controlContainer">
+    <div id="adc_1" class="adc-gender">
+
+        <div class="responseItem" unselectable="on" onselectstart="return false;" onmousedown="return false;">
+            <input type="radio" id="U1_1" name="U1" value="1" /><br />
+            <label for="U1_1">
+                <div class="imgWrapper"><img class="childOne" src="../resources/static/body-gender-male-dark.png"/></div>
+                <span class="responseText">Male</span>
+            </label>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="responseItem" unselectable="on" onselectstart="return false;" onmousedown="return false;">
+            <input type="radio" id="U1_2" name="U1" value="2" /><br />
+            <label for="U1_2">
+                <div class="imgWrapper"><img class="childTwo" src="../resources/static/body-gender-female-dark.png"/></div>
+                <span class="responseText">Female</span>
+            </label>
+            <div style="clear: both;"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="adc-gender_controlContainer">
+    <div id="adc_2" class="adc-gender">
+
+        <div class="responseItem" unselectable="on" onselectstart="return false;" onmousedown="return false;">
+            <input type="radio" id="U2_1" name="U2" value="1" /><br />
+            <label for="U2_1">
+                <div class="imgWrapper"><img class="childOne" src="../resources/static/face-gender-male-dark.png"/></div>
+                <span class="responseText">Male</span>
+            </label>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="responseItem" unselectable="on" onselectstart="return false;" onmousedown="return false;">
+            <input type="radio" id="U2_2" name="U2" value="2" /><br />
+            <label for="U2_2">
+                <div class="imgWrapper"><img class="childTwo" src="../resources/static/face-gender-female-dark.png"/></div>
+                <span class="responseText">Female</span>
+            </label>
+            <div style="clear: both;"></div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="../resources/static/adc2-gender.js"></script>
+
+</body>
+</html>

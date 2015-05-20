@@ -1,0 +1,50 @@
+{%
+Dim i
+Dim attrChecked
+Dim inputValue
+Dim inputName = CurrentQuestion.InputName()
+Dim inputId
+Dim caption
+Dim clsImg
+Dim pathImg = {""}
+Dim imageStyle = CurrentADC.PropValue("imageStyle")
+Dim autoForward = On(CurrentADC.PropValue("autoForward") = "1","autoforward","")
+If (imageStyle = "custom") Then
+    pathImg.Insert(On(CurrentQuestion.Responses.ResourceURL[1] <> "",CurrentQuestion.Responses.ResourceURL[1],CurrentADC.URLTo("static/body-gender-male-dark.png"))).Insert(On(CurrentQuestion.Responses.ResourceURL[2] <> "",CurrentQuestion.Responses.ResourceURL[2],CurrentADC.URLTo("static/body-gender-female-dark.png")))
+ElseIf (imageStyle = "iconlight") Then
+    pathImg.Insert(CurrentADC.URLTo("static/icon-gender-male-light.png")).Insert(CurrentADC.URLTo("static/icon-gender-female-light.png"))
+ElseIf (imageStyle = "icondark") Then
+    pathImg.Insert(CurrentADC.URLTo("static/icon-gender-male-dark.png")).Insert(CurrentADC.URLTo("static/icon-gender-female-dark.png"))
+ElseIf (imageStyle = "facelight") Then
+    pathImg.Insert(CurrentADC.URLTo("static/face-gender-male-light.png")).Insert(CurrentADC.URLTo("static/face-gender-female-light.png"))
+ElseIf (imageStyle = "facedark") Then
+    pathImg.Insert(CurrentADC.URLTo("static/face-gender-male-dark.png")).Insert(CurrentADC.URLTo("static/face-gender-female-dark.png"))
+ElseIf (imageStyle = "bodylight") Then
+    pathImg.Insert(CurrentADC.URLTo("static/body-gender-male-light.png")).Insert(CurrentADC.URLTo("static/body-gender-female-light.png"))
+Else
+    pathImg.Insert(CurrentADC.URLTo("static/body-gender-male-dark.png")).Insert(CurrentADC.URLTo("static/body-gender-female-dark.png"))
+EndIf
+pathImg.RemoveAt(1)
+%}
+<div class="adc-gender_controlContainer">
+    <div id="adc_{%= CurrentADC.InstanceId %}" class="adc-gender {%= autoForward %}">
+    {%
+        For i = 1 To CurrentQuestion.Responses.Count
+            attrChecked = On(CurrentQuestion.Responses[i].IsSelected, "checked=\"checked\"", "")
+            inputValue  = CurrentQuestion.Responses[i].InputValue()
+            inputId     = inputName + "_" + inputValue
+            caption     = CurrentQuestion.Responses[i].Caption
+            clsImg = On(i, "childOne", "childTwo")
+    %}
+        <div class="responseItem" unselectable="on" onselectstart="return false;" onmousedown="return false;">
+            <input type="radio" id="{%= inputId %}" name="{%= inputName %}" value="{%= inputValue %}" {%:= attrChecked %} /><br />
+            <label for="{%= inputId %}">
+                <div class="imgWrapper"><img class="{%= clsImg %}" src="{%:= pathImg[i] %}"/></div>
+                <span class="responseText">{%= caption %}</span>
+            </label>
+            <div style="clear: both;"></div>
+        </div>
+    {% Next i %}
+    </div>
+</div>
+
