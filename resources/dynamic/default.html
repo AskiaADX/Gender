@@ -34,7 +34,15 @@ pathImg.RemoveAt(1)
             inputValue  = CurrentQuestion.Responses[i].InputValue()
             inputId     = inputName + "_" + inputValue
             caption     = CurrentQuestion.Responses[i].Caption
-            clsImg = On(i, "childOne", "childTwo")
+            If ((CurrentQuestion.Responses[i].IsSelected = false) and (i = 1)) Then
+                clsImg = "childOne"
+            ElseIf ((CurrentQuestion.Responses[i].IsSelected = false) and (i <> 1)) Then
+                clsImg = "childTwo"
+            ElseIf ((CurrentQuestion.Responses[i].IsSelected) and (i = 1)) Then
+                clsImg = "childOneSelected"
+            Else
+                clsImg = "childTwoSelected"
+            EndIf
     %}
         <div class="responseItem" unselectable="on" onselectstart="return false;" onmousedown="return false;">
             <input type="radio" id="{%= inputId %}" name="{%= inputName %}" value="{%= inputValue %}" {%:= attrChecked %} /><br />
