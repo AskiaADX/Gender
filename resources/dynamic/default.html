@@ -21,6 +21,14 @@ ElseIf (imageStyle = "facedark") Then
     pathImg.Insert(CurrentADC.URLTo("static/face-gender-male-dark.png")).Insert(CurrentADC.URLTo("static/face-gender-female-dark.png"))
 ElseIf (imageStyle = "bodylight") Then
     pathImg.Insert(CurrentADC.URLTo("static/body-gender-male-light.png")).Insert(CurrentADC.URLTo("static/body-gender-female-light.png"))
+ElseIf (imageStyle = "blackavatar") Then
+    pathImg.Insert(CurrentADC.URLTo("static/black-gender-male-avatar.png")).Insert(CurrentADC.URLTo("static/black-gender-female-avatar.png"))
+ElseIf (imageStyle = "peopleavatar") Then
+    pathImg.Insert(CurrentADC.URLTo("static/people-gender-male-avatar.png")).Insert(CurrentADC.URLTo("static/people-gender-female-avatar.png"))
+ElseIf (imageStyle = "workavatar") Then
+    pathImg.Insert(CurrentADC.URLTo("static/work-gender-male-avatar.png")).Insert(CurrentADC.URLTo("static/work-gender-female-avatar.png"))
+ElseIf (imageStyle = "youngavatar") Then
+    pathImg.Insert(CurrentADC.URLTo("static/young-gender-male-avatar.png")).Insert(CurrentADC.URLTo("static/young-gender-female-avatar.png"))
 Else
     pathImg.Insert(CurrentADC.URLTo("static/body-gender-male-dark.png")).Insert(CurrentADC.URLTo("static/body-gender-female-dark.png"))
 EndIf

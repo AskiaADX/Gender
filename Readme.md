@@ -19,10 +19,10 @@ Dependencies
 Notes
 -------
 
-    - The parameter "Style of the images" let you choose between 6 predefines set of pictures.
+    - The parameter "Style of the images" let you choose between 10 predefines set of pictures.
     - If you want to use your own pictures then select “Use resources url” 
     and apply in design mode in the resource column the desired pictures
-    (In the adc2-gender.qex example, it’s the third screen).
+    (In the adc2-gender.qex example, it’s the fourth screen).
     - Some parameters can have different rendering depending of the browser used.
     - The Border Radius will not be rendered for IE8 and lower version of Internet Explorer.
     - The Drop Shadow will not be rendered for IE9 and lower version of Internet Explorer.

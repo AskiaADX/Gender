@@ -1,1 +1,2 @@
-v1.0.0 - Jérôme Duparc - first version of the control
+v1.0.0 - 2015/05/20 - Jérôme Duparc - first version of the control
+v1.0.1 - 2015/05/27 - Jérôme Duparc - 4 set of pictures added

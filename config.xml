@@ -7,11 +7,12 @@
     <info>
         <name>Gender</name>
         <guid>c43c39e9-a8f6-4f72-a22e-c6802429a10c</guid>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <date>2015-05-20</date>
         <description>
             <![CDATA[
-                v1.0.0 - Jérôme Duparc - first version of the control
+                v1.0.0 - 2015/05/20 - Jérôme Duparc - first version of the control
+                v1.0.1 - 2015/05/27 - Jérôme Duparc - 4 set of pictures added
             ]]>
         </description>
         <author>
@@ -54,6 +55,14 @@
             <content fileName="icon-gender-female-light.png" type="image" mode="static" position="none" />
             <content fileName="icon-gender-male-dark.png" type="image" mode="static" position="none" />
             <content fileName="icon-gender-male-light.png" type="image" mode="static" position="none" />
+            <content fileName="black-gender-female-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="black-gender-male-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="people-gender-female-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="people-gender-male-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="work-gender-female-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="work-gender-male-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="young-gender-female-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="young-gender-male-avatar.png" type="image" mode="static" position="none" />
         </output>
         <output id="standard">
             <description>
@@ -78,6 +87,14 @@
             <content fileName="icon-gender-female-light.png" type="image" mode="static" position="none" />
             <content fileName="icon-gender-male-dark.png" type="image" mode="static" position="none" />
             <content fileName="icon-gender-male-light.png" type="image" mode="static" position="none" />
+            <content fileName="black-gender-female-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="black-gender-male-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="people-gender-female-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="people-gender-male-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="work-gender-female-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="work-gender-male-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="young-gender-female-avatar.png" type="image" mode="static" position="none" />
+            <content fileName="young-gender-male-avatar.png" type="image" mode="static" position="none" />
         </output>
     </outputs>
 
@@ -96,6 +113,10 @@
                     <option value="facelight" text="Face light"/>
                     <option value="icondark" text="Icon dark"/>
                     <option value="iconlight" text="Icon light"/>
+                    <option value="blackavatar" text="Avatar black"/>
+                    <option value="peopleavatar" text="Avatar people"/>
+                    <option value="workavatar" text="Avatar work"/>
+                    <option value="youngavatar" text="Avatar young"/>
                     <option value="custom" text="Use resources url"/>
                 </options>
             </property>
