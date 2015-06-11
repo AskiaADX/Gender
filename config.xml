@@ -11,13 +11,13 @@
         <date>2015-05-20</date>
         <description>
             <![CDATA[
-                v1.0.0 - 2015/05/20 - Jérôme Duparc - first version of the control
-                v1.0.1 - 2015/05/27 - Jérôme Duparc - 4 set of pictures added
+                Show 2 pictures, one for Male and one for Female.
+                Hardcoded list of 10 predefined set of pictures + ability to use customs
             ]]>
         </description>
         <author>
             <![CDATA[
-                Jérôme Duparc <jeromed@askia.com>
+                Jerome Duparc <jeromed@askia.com>
             ]]>
         </author>
         <company>Askia</company>
