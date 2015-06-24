@@ -3,9 +3,9 @@
             polyfillGetElementsByClassName();
             var containers = document.getElementsByClassName("adc-gender");
             for (var j = 0, l = containers.length; j < l; j++) {
-                var labels = containers[j].getElementsByTagName("label");
-                var inputs = containers[j].getElementsByTagName("input");
-                var autoFwd = (hasClass(containers[j], "autoforward")) ? true : false;
+                var labels = containers[j].getElementsByTagName("label"),
+                    inputs = containers[j].getElementsByTagName("input"),
+                    autoFwd = (hasClass(containers[j], "autoforward")) ? true : false;
                 for (var i = 0, k = labels.length; i < k; i++) {
                     labels[i].onclick = checkIt;
                     inputs[i].onclick = checkClass(i,autoFwd);
@@ -65,13 +65,13 @@
 
         function checkClass(index, bool) {
             return function () {
-                var cls = (index == 0) ? "childOne" : "childTwo";
-                var clsSel = (index == 0) ? "childOneSelected" : "childTwoSelected";
-                var clsOther = (index == 0) ? "childTwo" : "childOne";
-                var clsOtherSel = (index == 0) ? "childTwoSelected" : "childOneSelected";
-                var container = this.parentNode.parentNode;
-                var obj = container.getElementsByTagName("img")[index];
-                var objOther = container.getElementsByTagName("img")[(index == 0) ? 1 : 0];
+                var cls = (index == 0) ? "childOne" : "childTwo",
+                    clsSel = (index == 0) ? "childOneSelected" : "childTwoSelected",
+                    clsOther = (index == 0) ? "childTwo" : "childOne",
+                    clsOtherSel = (index == 0) ? "childTwoSelected" : "childOneSelected",
+                    container = this.parentNode.parentNode,
+                    obj = container.getElementsByTagName("img")[index],
+                    objOther = container.getElementsByTagName("img")[(index == 0) ? 1 : 0];
                 removeClass(objOther, clsOtherSel);
                 addClass(objOther, clsOther);
                 removeClass(obj, cls);
@@ -82,10 +82,10 @@
 
         function hoverClass(index) {
             return function () {
-                var input = document.getElementById(this.htmlFor);
-                var cls = (index == 0) ? "childOne" : "childTwo";
-                var clsHover = (index == 0) ? "childOneHover" : "childTwoHover";
-                var obj = this.children[0].children[0];
+                var input = document.getElementById(this.htmlFor),
+                    cls = (index == 0) ? "childOne" : "childTwo",
+                    clsHover = (index == 0) ? "childOneHover" : "childTwoHover",
+                    obj = this.children[0].children[0];
                 removeClass(obj, cls);
                 if (!input.checked) {
                     addClass(obj, clsHover);
@@ -95,10 +95,10 @@
 
         function outClass(index) {
             return function () {
-                var input = document.getElementById(this.htmlFor);
-                var cls = (index == 0) ? "childOne" : "childTwo";
-                var clsHover = (index == 0) ? "childOneHover" : "childTwoHover";
-                var obj = this.children[0].children[0];
+                var input = document.getElementById(this.htmlFor),
+                    cls = (index == 0) ? "childOne" : "childTwo",
+                    clsHover = (index == 0) ? "childOneHover" : "childTwoHover",
+                    obj = this.children[0].children[0];
                 removeClass(obj, clsHover);
                 if (!input.checked) {
                     addClass(obj, cls);
