@@ -74,10 +74,12 @@ Dim response2SelectedDropShadow =CurrentADC.PropValue("response2SelectedDropShad
 #adc_{%= CurrentADC.InstanceId %} .responseItem {
     margin: {%= responseMargin %};
 }
-#adc_{%= CurrentADC.InstanceId %} .responseItem img, #adc_{%= CurrentADC.InstanceId %} .imgWrapper {
+#adc_{%= CurrentADC.InstanceId %} .responseItem img,
+#adc_{%= CurrentADC.InstanceId %} .imgWrapper {
     border-radius: {%= borderRadius %};
 }
-#adc_{%= CurrentADC.InstanceId %} .imgWrapper img, #adc_{%= CurrentADC.InstanceId %} .responseText {
+#adc_{%= CurrentADC.InstanceId %} .imgWrapper img,
+#adc_{%= CurrentADC.InstanceId %} .responseText {
     max-width: {%= responseMaxWidth %};
 }
 #adc_{%= CurrentADC.InstanceId %} .responseItem input {

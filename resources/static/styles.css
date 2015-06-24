@@ -17,9 +17,11 @@
 .adc-gender .responseText {
     display: block;
 }
-.adc-gender label:hover, .adc-gender input:hover {
+.adc-gender label:hover,
+.adc-gender input:hover {
     cursor: pointer;
 }
-.adc-gender .imgWrapper img, .adc-gender .responseText {
+.adc-gender .imgWrapper img,
+.adc-gender .responseText {
     width: 100%;
 }
