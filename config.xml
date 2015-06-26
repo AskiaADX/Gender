@@ -29,6 +29,7 @@
         <constraints>
             <constraint on="questions" single="true" />
             <constraint on="controls" responseblock="true"/>
+            <constraint on="responses" min="2" max="2" />
         </constraints>
     </info>
 
