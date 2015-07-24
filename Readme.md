@@ -1,10 +1,10 @@
 Gender
 =====
 
-Preview
+Demo
 -------
 
-[Preview of the Gender control](http://show.askia.com/WebProd/cgi-bin/AskiaExt.dll?Action=StartSurvey&SurveyName=ADC2_Gender)
+[Demo of the Gender control](http://show.askia.com/WebProd/cgi-bin/AskiaExt.dll?Action=StartSurvey&SurveyName=ADC2_Gender)
 
 Tested in
 -----------
