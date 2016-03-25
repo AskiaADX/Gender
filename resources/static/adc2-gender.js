@@ -1,4 +1,4 @@
- (function() {
+﻿ (function() {
         (function init() {
             polyfillGetElementsByClassName();
             var containers = document.getElementsByClassName("adc-gender");

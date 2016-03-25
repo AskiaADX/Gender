@@ -1,4 +1,4 @@
-{%
+﻿{%
 Dim i
 Dim attrChecked
 Dim inputValue
@@ -56,7 +56,7 @@ pathImg.RemoveAt(1)
             <input type="radio" id="{%= inputId %}" name="{%= inputName %}" value="{%= inputValue %}" {%:= attrChecked %} /><br />
             <label for="{%= inputId %}">
                 <div class="imgWrapper"><img class="{%= clsImg %}" src="{%:= pathImg[i] %}"/></div>
-                <span class="responseText">{%= caption %}</span>
+                <span class="responseText">{%:= caption %}</span>
             </label>
             <div style="clear: both;"></div>
         </div>
