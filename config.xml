@@ -94,7 +94,7 @@
     <category id="general" name="General">
       <property xsi:type="standardProperty" id="imageStyle" name="Style of the images" type="string" mode="static" require="false" visible="true">
         <description><![CDATA[The pictures used by the control]]></description>
-        <value><![CDATA[bodydark]]></value>
+        <value><![CDATA[peopleavatar]]></value>
         <options>
           <option value="bodydark" text="Body dark" />
           <option value="bodylight" text="Body light" />
