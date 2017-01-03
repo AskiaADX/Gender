@@ -1,604 +1,440 @@
 <?xml version="1.0" encoding="utf-8"?>
-<control xmlns="http://www.askia.com/ADCSchema"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://www.askia.com/ADCSchema http://www.askia.com/Downloads/dev/schemas/adc2.0/Config.xsd"
-         version="2.0.0"
-         askiaCompat="5.3.3">
-    <info>
-        <name>Gender</name>
-        <guid>c43c39e9-a8f6-4f72-a22e-c6802429a10c</guid>
-        <version>1.0.3</version>
-        <date>2015-05-20</date>
-        <description>
-            <![CDATA[
-                Show 2 pictures, one for Male and one for Female.
-                Hardcoded list of 10 predefined set of pictures + ability to use customs
-            ]]>
-        </description>
-        <author>
-            <![CDATA[
-                Jerome Duparc <jeromed@askia.com>
-            ]]>
-        </author>
-        <company>Askia</company>
-        <helpURL>http://support.askia.com</helpURL>
-        <site>http://www.askia.com</site>
-        <categories>
-            <category>General</category>
-        </categories>
-        <constraints>
-            <constraint on="questions" single="true" />
-            <constraint on="controls" responseblock="true"/>
-            <constraint on="responses" min="2" max="2" />
-        </constraints>
-    </info>
-
-    <outputs defaultOutput="fallback">
-        <output id="fallback">
-            <description>
-                <![CDATA[Fallback when the browser doesn't support Javascript]]>
-            </description>
-            <condition>
-                <![CDATA[Not(Browser.Support("javascript"))]]>
-            </condition>
-            <content fileName="styles.css" type="css" mode="static" position="head" />
-            <content fileName="default.css" type="css" mode="dynamic" position="head" />
-            <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
-            <content fileName="body-gender-female-dark.png" type="image" mode="static" position="none" />
-            <content fileName="body-gender-female-light.png" type="image" mode="static" position="none" />
-            <content fileName="body-gender-male-dark.png" type="image" mode="static" position="none" />
-            <content fileName="body-gender-male-light.png" type="image" mode="static" position="none" />
-            <content fileName="face-gender-female-dark.png" type="image" mode="static" position="none" />
-            <content fileName="face-gender-female-light.png" type="image" mode="static" position="none" />
-            <content fileName="face-gender-male-dark.png" type="image" mode="static" position="none" />
-            <content fileName="face-gender-male-light.png" type="image" mode="static" position="none" />
-            <content fileName="icon-gender-female-dark.png" type="image" mode="static" position="none" />
-            <content fileName="icon-gender-female-light.png" type="image" mode="static" position="none" />
-            <content fileName="icon-gender-male-dark.png" type="image" mode="static" position="none" />
-            <content fileName="icon-gender-male-light.png" type="image" mode="static" position="none" />
-            <content fileName="black-gender-female-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="black-gender-male-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="people-gender-female-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="people-gender-male-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="work-gender-female-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="work-gender-male-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="young-gender-female-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="young-gender-male-avatar.png" type="image" mode="static" position="none" />
-        </output>
-        <output id="standard">
-            <description>
-                <![CDATA[Output when the browser support Javascript]]>
-            </description>
-            <condition>
-                <![CDATA[Browser.Support("javascript")]]>
-            </condition>
-            <content fileName="styles.css" type="css" mode="static" position="head" />
-            <content fileName="default.css" type="css" mode="dynamic" position="head" />
-            <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
-            <content fileName="adc2-gender.js" type="javascript" mode="static" position="foot" />
-            <content fileName="body-gender-female-dark.png" type="image" mode="static" position="none" />
-            <content fileName="body-gender-female-light.png" type="image" mode="static" position="none" />
-            <content fileName="body-gender-male-dark.png" type="image" mode="static" position="none" />
-            <content fileName="body-gender-male-light.png" type="image" mode="static" position="none" />
-            <content fileName="face-gender-female-dark.png" type="image" mode="static" position="none" />
-            <content fileName="face-gender-female-light.png" type="image" mode="static" position="none" />
-            <content fileName="face-gender-male-dark.png" type="image" mode="static" position="none" />
-            <content fileName="face-gender-male-light.png" type="image" mode="static" position="none" />
-            <content fileName="icon-gender-female-dark.png" type="image" mode="static" position="none" />
-            <content fileName="icon-gender-female-light.png" type="image" mode="static" position="none" />
-            <content fileName="icon-gender-male-dark.png" type="image" mode="static" position="none" />
-            <content fileName="icon-gender-male-light.png" type="image" mode="static" position="none" />
-            <content fileName="black-gender-female-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="black-gender-male-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="people-gender-female-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="people-gender-male-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="work-gender-female-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="work-gender-male-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="young-gender-female-avatar.png" type="image" mode="static" position="none" />
-            <content fileName="young-gender-male-avatar.png" type="image" mode="static" position="none" />
-        </output>
-    </outputs>
-
-    <properties>
-
-        <category id="general" name="General">
-            <property xsi:type="standardProperty" id="imageStyle" name="Style of the images" type="string" mode="static">
-                <description>
-                    <![CDATA[The pictures used by the control]]>
-                </description>
-                <value>bodydark</value>
-                <options>
-                    <option value="bodydark" text="Body dark"/>
-                    <option value="bodylight" text="Body light"/>
-                    <option value="facedark" text="Face dark"/>
-                    <option value="facelight" text="Face light"/>
-                    <option value="icondark" text="Icon dark"/>
-                    <option value="iconlight" text="Icon light"/>
-                    <option value="blackavatar" text="Avatar black"/>
-                    <option value="peopleavatar" text="Avatar people"/>
-                    <option value="workavatar" text="Avatar work"/>
-                    <option value="youngavatar" text="Avatar young"/>
-                    <option value="custom" text="Use resources url"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="fontSize" name="Font Size" type="string" mode="static">
-                <description>
-                    <![CDATA[The font size for the control]]>
-                </description>
-                <value>16px</value>
-            </property>
-            <property xsi:type="standardProperty" id="fontColour" name="Response Font Colour" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[The font colour for the control]]>
-                </description>
-                <value>68,68,68</value>
-            </property>
-            <property xsi:type="standardProperty" id="controlWidth" name="Control Width" type="string" mode="static">
-                <description>
-                    <![CDATA[The width of the control]]>
-                </description>
-                <value>100%</value>
-            </property>
-            <property xsi:type="standardProperty" id="maxWidth" name="Control Max Width" type="string" mode="static">
-                <description>
-                    <![CDATA[The maximum width of the control]]>
-                </description>
-                <value>220px</value>
-            </property>
-            <property xsi:type="standardProperty" id="responseMaxWidth" name="Response Max Width" type="string" mode="static">
-                <description>
-                    <![CDATA[Force the width of the responses]]>
-                </description>
-                <value>100px</value>
-            </property>
-            <property xsi:type="standardProperty" id="responseMargin" name="Response Margin" type="string" mode="static">
-                <description>
-                    <![CDATA[When set this will define the margin/space between responses]]>
-                </description>
-                <value>0 3px</value>
-            </property>
-            <property xsi:type="standardProperty" id="controlAlign" name="Control Alignment" type="string" mode="static">
-                <description>
-                    <![CDATA[The alignment of the control]]>
-                </description>
-                <value>left</value>
-                <options>
-                    <option value="left" text="Left"/>
-                    <option value="center" text="Center"/>
-                    <option value="right" text="Right"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="textAlign" name="Text Alignment" type="string" mode="static">
-                <description>
-                    <![CDATA[The alignment of the text in the responses]]>
-                </description>
-                <value>center</value>
-                <options>
-                    <option value="left" text="Left"/>
-                    <option value="center" text="Center"/>
-                    <option value="right" text="Right"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="borderRadius" name="Border Radius" type="string" mode="static">
-                <description>
-                    <![CDATA[The amount of curve on the response corners]]>
-                </description>
-                <value>2px</value>
-                <options>
-                    <option value="0px" text="0"/>
-                    <option value="2px" text="2"/>
-                    <option value="5px" text="5"/>
-                    <option value="10px" text="10"/>
-                    <option value="15px" text="15"/>
-                    <option value="20px" text="20"/>
-                    <option value="25px" text="25"/>
-                    <option value="30px" text="30"/>
-                    <option value="50px" text="50"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="displayResponseText" name="Display Response Text" type="string" mode="static">
-                <description>
-                    <![CDATA[Show or hide response text]]>
-                </description>
-                <value>block</value>
-                <options>
-                    <option value="block" text="Yes"/>
-                    <option value="none" text="No"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="responseTextPadding" name="Response Text Padding" type="string" mode="static">
-                <description>
-                    <![CDATA[When set this will force the height of the response text]]>
-                </description>
-                <value>7px 0</value>
-            </property>
-            <property xsi:type="standardProperty" id="autoForward" name="Auto Forward" type="string" mode="static">
-                <description>
-                    <![CDATA[Whether the question continues to the next automatically]]>
-                </description>
-                <value>0</value>
-                <options>
-                    <option value="1" text="Yes"/>
-                    <option value="0" text="No"/>
-                </options>
-            </property>
-        </category>
-
-        <category id="firstresponse" name="First Response">
-            <property xsi:type="standardProperty" id="response1ColourPrimary" name="Response1 Colour Primary" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[Primary colour of the item]]>
-                </description>
-                <value>255,255,255</value>
-            </property>
-            <property xsi:type="standardProperty" id="response1ColourSecondary" name="Response1 Colour Secondary" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[Secondary colour of the item]]>
-                </description>
-                <value>255,255,255</value>
-            </property>
-            <property xsi:type="standardProperty" id="response1BorderColour" name="Response1 Border Colour" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[The border colour around the image of the response]]>
-                </description>
-                <value>68,68,68</value>
-            </property>
-            <property xsi:type="standardProperty" id="response1BorderThickness" name="Response1 Border Thickness" type="string" mode="static">
-                <description>
-                    <![CDATA[The thickness of the border around the image of the response]]>
-                </description>
-                <value>1px</value>
-                <options>
-                    <option value="none" text="None"/>
-                    <option value="1px" text="1px"/>
-                    <option value="2px" text="2px"/>
-                    <option value="3px" text="3px"/>
-                    <option value="4px" text="4px"/>
-                    <option value="5px" text="5px"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response1BorderStyle" name="Response1 Border Style" type="string" mode="static">
-                <description>
-                    <![CDATA[The style of the border around the image of the response]]>
-                </description>
-                <value>solid</value>
-                <options>
-                    <option value="none" text="None"/>
-                    <option value="solid" text="Solid"/>
-                    <option value="dashed" text="Dashed"/>
-                    <option value="dotted" text="Dotted"/>
-                    <option value="double" text="Double"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response1DropShadow" name="Response1 Drop Shadow" type="string" mode="static">
-                <description>
-                    <![CDATA[The visibility of a drop shadow under the image of the response]]>
-                </description>
-                <value>0px 2px 2px 0px #999</value>
-                <options>
-                    <option value="0px 2px 2px 0px #999" text="On"/>
-                    <option value="none" text="Off"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="showResponse1HoverColour" name="Show Response1 Hover Colour" type="string" mode="static">
-                <description>
-                    <![CDATA[This will change the colour of responses when hovered over]]>
-                </description>
-                <value>1</value>
-                <options>
-                    <option value="1" text="Yes"/>
-                    <option value="0" text="No"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response1HoverColourPrimary" name="Response1 Hover Colour Primary" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[Primary colour of the item when hovered over]]>
-                </description>
-                <value>243,243,243</value>
-            </property>
-            <property xsi:type="standardProperty" id="response1HoverColourSecondary" name="Response1 Hover Colour Secondary" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[Secondary colour of the item when hovered over]]>
-                </description>
-                <value>243,243,243</value>
-            </property>
-            <property xsi:type="standardProperty" id="showResponse1HoverBorder" name="Show Response1 Hover Border" type="string" mode="static">
-                <description>
-                    <![CDATA[This will change the colour of the border of responses when hovered over]]>
-                </description>
-                <value>1</value>
-                <options>
-                    <option value="1" text="Yes"/>
-                    <option value="0" text="No"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response1HoverBorderColour" name="Response1 Hover Border Colour" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[The border colour around the image of the response when hovered over]]>
-                </description>
-                <value>68,68,68</value>
-            </property>
-            <property xsi:type="standardProperty" id="response1HoverBorderThickness" name="Response1 Hover Border Thickness" type="string" mode="static">
-                <description>
-                    <![CDATA[The thickness of the border around the image of the response when hovered over]]>
-                </description>
-                <value>1px</value>
-                <options>
-                    <option value="none" text="None"/>
-                    <option value="1px" text="1px"/>
-                    <option value="2px" text="2px"/>
-                    <option value="3px" text="3px"/>
-                    <option value="4px" text="4px"/>
-                    <option value="5px" text="5px"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response1HoverBorderStyle" name="Response1 Hover Border Style" type="string" mode="static">
-                <description>
-                    <![CDATA[The style of the border around the image of the response when hovered over]]>
-                </description>
-                <value>solid</value>
-                <options>
-                    <option value="none" text="None"/>
-                    <option value="solid" text="Solid"/>
-                    <option value="dashed" text="Dashed"/>
-                    <option value="dotted" text="Dotted"/>
-                    <option value="double" text="Double"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response1HoverDropShadow" name="Response1 Hover Drop Shadow" type="string" mode="static">
-                <description>
-                    <![CDATA[The visibility of a drop shadow under the image of the response when hovered over]]>
-                </description>
-                <value>0px 2px 2px 0px #999</value>
-                <options>
-                    <option value="0px 2px 2px 0px #999" text="On"/>
-                    <option value="none" text="Off"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response1SelectedColourPrimary" name="Response1 Selected Colour Primary" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[Primary colour of the selected item]]>
-                </description>
-                <value>221,239,255</value>
-            </property>
-            <property xsi:type="standardProperty" id="response1SelectedColourSecondary" name="Response1 Selected Colour Secondary" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[Secondary colour of the selected item]]>
-                </description>
-                <value>211,229,244</value>
-            </property>
-            <property xsi:type="standardProperty" id="response1SelectedBorderColour" name="Response1 Selected Border Colour" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[The border colour around the image of the selected item]]>
-                </description>
-                <value>68,68,68</value>
-            </property>
-            <property xsi:type="standardProperty" id="response1SelectedBorderThickness" name="Response1 Selected Border Thickness" type="string" mode="static">
-                <description>
-                    <![CDATA[The thickness of the border around the image of the selected item]]>
-                </description>
-                <value>1px</value>
-                <options>
-                    <option value="none" text="None"/>
-                    <option value="1px" text="1px"/>
-                    <option value="2px" text="2px"/>
-                    <option value="3px" text="3px"/>
-                    <option value="4px" text="4px"/>
-                    <option value="5px" text="5px"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response1SelectedBorderStyle" name="Response1 Selected Border Style" type="string" mode="static">
-                <description>
-                    <![CDATA[The style of the border around the image of the selected item]]>
-                </description>
-                <value>solid</value>
-                <options>
-                    <option value="none" text="None"/>
-                    <option value="solid" text="Solid"/>
-                    <option value="dashed" text="Dashed"/>
-                    <option value="dotted" text="Dotted"/>
-                    <option value="double" text="Double"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response1SelectedDropShadow" name="Response1 Selected Drop Shadow" type="string" mode="static">
-                <description>
-                    <![CDATA[The visibility of a drop shadow under the image of the selected item]]>
-                </description>
-                <value>0px 2px 2px 0px #999</value>
-                <options>
-                    <option value="0px 2px 2px 0px #999" text="On"/>
-                    <option value="none" text="Off"/>
-                </options>
-            </property>
-        </category>
-
-        <category id="secondresponse" name="Second Response">
-            <property xsi:type="standardProperty" id="response2ColourPrimary" name="Response2 Colour Primary" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[Primary colour of the item]]>
-                </description>
-                <value>255,255,255</value>
-            </property>
-            <property xsi:type="standardProperty" id="response2ColourSecondary" name="Response2 Colour Secondary" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[Secondary colour of the item]]>
-                </description>
-                <value>255,255,255</value>
-            </property>
-            <property xsi:type="standardProperty" id="response2BorderColour" name="Response2 Border Colour" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[The border colour around the image of the response]]>
-                </description>
-                <value>68,68,68</value>
-            </property>
-            <property xsi:type="standardProperty" id="response2BorderThickness" name="Response2 Border Thickness" type="string" mode="static">
-                <description>
-                    <![CDATA[The thickness of the border around the image of the response]]>
-                </description>
-                <value>1px</value>
-                <options>
-                    <option value="none" text="None"/>
-                    <option value="1px" text="1px"/>
-                    <option value="2px" text="2px"/>
-                    <option value="3px" text="3px"/>
-                    <option value="4px" text="4px"/>
-                    <option value="5px" text="5px"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response2BorderStyle" name="Response2 Border Style" type="string" mode="static">
-                <description>
-                    <![CDATA[The style of the border around the image of the response]]>
-                </description>
-                <value>solid</value>
-                <options>
-                    <option value="none" text="None"/>
-                    <option value="solid" text="Solid"/>
-                    <option value="dashed" text="Dashed"/>
-                    <option value="dotted" text="Dotted"/>
-                    <option value="double" text="Double"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response2DropShadow" name="Response2 Drop Shadow" type="string" mode="static">
-                <description>
-                    <![CDATA[The visibility of a drop shadow under the image of the response]]>
-                </description>
-                <value>0px 2px 2px 0px #999</value>
-                <options>
-                    <option value="0px 2px 2px 0px #999" text="On"/>
-                    <option value="none" text="Off"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="showResponse2HoverColour" name="Show Response2 Hover Colour" type="string" mode="static">
-                <description>
-                    <![CDATA[This will change the colour of responses when hovered over]]>
-                </description>
-                <value>1</value>
-                <options>
-                    <option value="1" text="Yes"/>
-                    <option value="0" text="No"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response2HoverColourPrimary" name="Response2 Hover Colour Primary" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[Primary colour of the item when hovered over]]>
-                </description>
-                <value>243,243,243</value>
-            </property>
-            <property xsi:type="standardProperty" id="response2HoverColourSecondary" name="Response2 Hover Colour Secondary" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[Secondary colour of the item when hovered over]]>
-                </description>
-                <value>243,243,243</value>
-            </property>
-            <property xsi:type="standardProperty" id="showResponse2HoverBorder" name="Show Response2 Hover Border" type="string" mode="static">
-                <description>
-                    <![CDATA[This will change the colour of the border of responses when hovered over]]>
-                </description>
-                <value>1</value>
-                <options>
-                    <option value="1" text="Yes"/>
-                    <option value="0" text="No"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response2HoverBorderColour" name="Response2 Hover Border Colour" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[The border colour around the image of the response when hovered over]]>
-                </description>
-                <value>68,68,68</value>
-            </property>
-            <property xsi:type="standardProperty" id="response2HoverBorderThickness" name="Response2 Hover Border Thickness" type="string" mode="static">
-                <description>
-                    <![CDATA[The thickness of the border around the image of the response when hovered over]]>
-                </description>
-                <value>1px</value>
-                <options>
-                    <option value="none" text="None"/>
-                    <option value="1px" text="1px"/>
-                    <option value="2px" text="2px"/>
-                    <option value="3px" text="3px"/>
-                    <option value="4px" text="4px"/>
-                    <option value="5px" text="5px"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response2HoverBorderStyle" name="Response2 Hover Border Style" type="string" mode="static">
-                <description>
-                    <![CDATA[The style of the border around the image of the response when hovered over]]>
-                </description>
-                <value>solid</value>
-                <options>
-                    <option value="none" text="None"/>
-                    <option value="solid" text="Solid"/>
-                    <option value="dashed" text="Dashed"/>
-                    <option value="dotted" text="Dotted"/>
-                    <option value="double" text="Double"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response2HoverDropShadow" name="Response2 Hover Drop Shadow" type="string" mode="static">
-                <description>
-                    <![CDATA[The visibility of a drop shadow under the image of the response when hovered over]]>
-                </description>
-                <value>0px 2px 2px 0px #999</value>
-                <options>
-                    <option value="0px 2px 2px 0px #999" text="On"/>
-                    <option value="none" text="Off"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response2SelectedColourPrimary" name="Response2 Selected Colour Primary" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[Primary colour of the selected item]]>
-                </description>
-                <value>255,235,248</value>
-            </property>
-            <property xsi:type="standardProperty" id="response2SelectedColourSecondary" name="Response2 Selected Colour Secondary" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[Secondary colour of the selected item]]>
-                </description>
-                <value>246,226,239</value>
-            </property>
-            <property xsi:type="standardProperty" id="response2SelectedBorderColour" name="Response2 Selected Border Colour" type="color" colorFormat="rgb" mode="static">
-                <description>
-                    <![CDATA[The border colour around the image of the selected item]]>
-                </description>
-                <value>68,68,68</value>
-            </property>
-            <property xsi:type="standardProperty" id="response2SelectedBorderThickness" name="Response2 Selected Border Thickness" type="string" mode="static">
-                <description>
-                    <![CDATA[The thickness of the border around the image of the selected item]]>
-                </description>
-                <value>1px</value>
-                <options>
-                    <option value="none" text="None"/>
-                    <option value="1px" text="1px"/>
-                    <option value="2px" text="2px"/>
-                    <option value="3px" text="3px"/>
-                    <option value="4px" text="4px"/>
-                    <option value="5px" text="5px"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response2SelectedBorderStyle" name="Response2 Selected Border Style" type="string" mode="static">
-                <description>
-                    <![CDATA[The style of the border around the image of the selected item]]>
-                </description>
-                <value>solid</value>
-                <options>
-                    <option value="none" text="None"/>
-                    <option value="solid" text="Solid"/>
-                    <option value="dashed" text="Dashed"/>
-                    <option value="dotted" text="Dotted"/>
-                    <option value="double" text="Double"/>
-                </options>
-            </property>
-            <property xsi:type="standardProperty" id="response2SelectedDropShadow" name="Response2 Selected Drop Shadow" type="string" mode="static">
-                <description>
-                    <![CDATA[The visibility of a drop shadow under the image of the selected item]]>
-                </description>
-                <value>0px 2px 2px 0px #999</value>
-                <options>
-                    <option value="0px 2px 2px 0px #999" text="On"/>
-                    <option value="none" text="Off"/>
-                </options>
-            </property>
-        </category>
-
-    </properties>
+<control  xmlns="http://www.askia.com/2.0.0/ADCSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.askia.com/2.0.0/ADCSchema https://raw.githubusercontent.com/AskiaADX/ADXSchema/2.0.0/ADCSchema.xsd"
+          version="2.0.0"
+          askiaCompat="5.3.3">
+  <info>
+    <name>Gender</name>
+    <guid>c43c39e9-a8f6-4f72-a22e-c6802429a10c</guid>
+    <version>2.0.0</version>
+    <date>2015-05-20</date>
+    <description><![CDATA[Show 2 pictures, one for Male and one for Female.
+                Hardcoded list of 10 predefined set of pictures + ability to use customs]]></description>
+    <company>Askia</company>
+    <author><![CDATA[Jerome Duparc <jeromed@askia.com>]]></author>
+    <site>http://www.askia.com</site>
+    <helpURL>http://support.askia.com</helpURL>
+    <categories>
+      <category>General</category>
+    </categories>
+    <style width="0" height="0" />
+    <constraints>
+      <constraint on="questions" single="true" chapter="false" date="false" multiple="false" numeric="false" open="false" requireParentLoop="false" />
+      <constraint on="controls" responseblock="true" checkbox="false" label="false" listbox="false" radiobutton="false" textbox="false" />
+      <constraint on="responses" min="2" max="2" />
+    </constraints>
+  </info>
+  <outputs defaultOutput="fallback">
+    <output id="fallback">
+      <description><![CDATA[
+                Fallback when the browser doesn't support Javascript
+            ]]></description>
+      <condition><![CDATA[
+                Not(Browser.Support("javascript"))
+            ]]></condition>
+      <content fileName="styles.css" type="css" mode="static" position="head" />
+      <content fileName="default.css" type="css" mode="dynamic" position="head" />
+      <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
+      <content fileName="body-gender-female-dark.png" type="image" mode="static" position="none" />
+      <content fileName="body-gender-female-light.png" type="image" mode="static" position="none" />
+      <content fileName="body-gender-male-dark.png" type="image" mode="static" position="none" />
+      <content fileName="body-gender-male-light.png" type="image" mode="static" position="none" />
+      <content fileName="face-gender-female-dark.png" type="image" mode="static" position="none" />
+      <content fileName="face-gender-female-light.png" type="image" mode="static" position="none" />
+      <content fileName="face-gender-male-dark.png" type="image" mode="static" position="none" />
+      <content fileName="face-gender-male-light.png" type="image" mode="static" position="none" />
+      <content fileName="icon-gender-female-dark.png" type="image" mode="static" position="none" />
+      <content fileName="icon-gender-female-light.png" type="image" mode="static" position="none" />
+      <content fileName="icon-gender-male-dark.png" type="image" mode="static" position="none" />
+      <content fileName="icon-gender-male-light.png" type="image" mode="static" position="none" />
+      <content fileName="black-gender-female-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="black-gender-male-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="people-gender-female-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="people-gender-male-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="work-gender-female-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="work-gender-male-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="young-gender-female-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="young-gender-male-avatar.png" type="image" mode="static" position="none" />
+    </output>
+    <output id="standard">
+      <description><![CDATA[
+                Output when the browser support Javascript
+            ]]></description>
+      <condition><![CDATA[
+                Browser.Support("javascript")
+            ]]></condition>
+      <content fileName="styles.css" type="css" mode="static" position="head" />
+      <content fileName="default.css" type="css" mode="dynamic" position="head" />
+      <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
+      <content fileName="adc2-gender.js" type="javascript" mode="static" position="foot" />
+      <content fileName="body-gender-female-dark.png" type="image" mode="static" position="none" />
+      <content fileName="body-gender-female-light.png" type="image" mode="static" position="none" />
+      <content fileName="body-gender-male-dark.png" type="image" mode="static" position="none" />
+      <content fileName="body-gender-male-light.png" type="image" mode="static" position="none" />
+      <content fileName="face-gender-female-dark.png" type="image" mode="static" position="none" />
+      <content fileName="face-gender-female-light.png" type="image" mode="static" position="none" />
+      <content fileName="face-gender-male-dark.png" type="image" mode="static" position="none" />
+      <content fileName="face-gender-male-light.png" type="image" mode="static" position="none" />
+      <content fileName="icon-gender-female-dark.png" type="image" mode="static" position="none" />
+      <content fileName="icon-gender-female-light.png" type="image" mode="static" position="none" />
+      <content fileName="icon-gender-male-dark.png" type="image" mode="static" position="none" />
+      <content fileName="icon-gender-male-light.png" type="image" mode="static" position="none" />
+      <content fileName="black-gender-female-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="black-gender-male-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="people-gender-female-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="people-gender-male-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="work-gender-female-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="work-gender-male-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="young-gender-female-avatar.png" type="image" mode="static" position="none" />
+      <content fileName="young-gender-male-avatar.png" type="image" mode="static" position="none" />
+    </output>
+  </outputs>
+  <properties>
+    <category id="general" name="General">
+      <property xsi:type="standardProperty" id="imageStyle" name="Style of the images" type="string" mode="static" require="false" visible="true">
+        <description><![CDATA[The pictures used by the control]]></description>
+        <value><![CDATA[bodydark]]></value>
+        <options>
+          <option value="bodydark" text="Body dark" />
+          <option value="bodylight" text="Body light" />
+          <option value="facedark" text="Face dark" />
+          <option value="facelight" text="Face light" />
+          <option value="icondark" text="Icon dark" />
+          <option value="iconlight" text="Icon light" />
+          <option value="blackavatar" text="Avatar black" />
+          <option value="peopleavatar" text="Avatar people" />
+          <option value="workavatar" text="Avatar work" />
+          <option value="youngavatar" text="Avatar young" />
+          <option value="custom" text="Use resources url" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="fontSize" name="Font Size" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The font size for the control]]></description>
+        <value><![CDATA[{%= Theme.NormalFS %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="fontColour" name="Response Font Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[The font colour for the control]]></description>
+        <value><![CDATA[{%= Theme.BlackColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="controlWidth" name="Control Width" type="string" mode="static">
+        <description><![CDATA[
+                    The width of the control
+                ]]></description>
+        <value><![CDATA[100%]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="maxWidth" name="Control Max Width" type="string" mode="static">
+        <description><![CDATA[
+                    The maximum width of the control
+                ]]></description>
+        <value><![CDATA[220px]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="responseMaxWidth" name="Response Max Width" type="string" mode="static">
+        <description><![CDATA[
+                    Force the width of the responses
+                ]]></description>
+        <value><![CDATA[100px]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="responseMargin" name="Response Margin" type="string" mode="static" require="false" visible="true">
+        <description><![CDATA[When set this will define the margin/space between responses]]></description>
+        <value><![CDATA[0 3px]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="controlAlign" name="Control Alignment" type="string" mode="static">
+        <description><![CDATA[
+                    The alignment of the control
+                ]]></description>
+        <value><![CDATA[left]]></value>
+        <options>
+          <option value="left" text="Left" />
+          <option value="center" text="Center" />
+          <option value="right" text="Right" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="textAlign" name="Text Alignment" type="string" mode="static">
+        <description><![CDATA[
+                    The alignment of the text in the responses
+                ]]></description>
+        <value><![CDATA[center]]></value>
+        <options>
+          <option value="left" text="Left" />
+          <option value="center" text="Center" />
+          <option value="right" text="Right" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="borderRadius" name="Border Radius" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The amount of curve on the response corners]]></description>
+        <value><![CDATA[{%= Theme.BorderRadius %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="displayResponseText" name="Display Response Text" type="string" mode="static">
+        <description><![CDATA[
+                    Show or hide response text
+                ]]></description>
+        <value><![CDATA[block]]></value>
+        <options>
+          <option value="block" text="Yes" />
+          <option value="none" text="No" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="responseTextPadding" name="Response Text Padding" type="string" mode="static" require="false" visible="false">
+        <description><![CDATA[When set this will force the height of the response text]]></description>
+        <value><![CDATA[7px 0]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="autoForward" name="Auto Forward" type="string" mode="static">
+        <description><![CDATA[
+                    Whether the question continues to the next automatically
+                ]]></description>
+        <value><![CDATA[0]]></value>
+        <options>
+          <option value="1" text="Yes" />
+          <option value="0" text="No" />
+        </options>
+      </property>
+    </category>
+    <category id="firstresponse" name="First Response">
+      <property xsi:type="standardProperty" id="response1ColourPrimary" name="Response1 Colour Primary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[Primary colour of the item]]></description>
+        <value><![CDATA[{%= Theme.NeutralLightColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response1ColourSecondary" name="Response1 Colour Secondary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[Secondary colour of the item]]></description>
+        <value><![CDATA[{%= Theme.NeutralLightColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response1BorderColour" name="Response1 Border Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[The border colour around the image of the response]]></description>
+        <value><![CDATA[{%= Theme.NeutralDarkColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response1BorderThickness" name="Response1 Border Thickness" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The thickness of the border around the image of the response]]></description>
+        <value><![CDATA[{%= Theme.BorderWidth %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response1BorderStyle" name="Response1 Border Style" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The style of the border around the image of the response]]></description>
+        <value><![CDATA[solid]]></value>
+        <options>
+          <option value="none" text="None" />
+          <option value="solid" text="Solid" />
+          <option value="dashed" text="Dashed" />
+          <option value="dotted" text="Dotted" />
+          <option value="double" text="Double" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="response1DropShadow" name="Response1 Drop Shadow" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The visibility of a drop shadow under the image of the response]]></description>
+        <value><![CDATA[none]]></value>
+        <options>
+          <option value="0px 2px 4px rgba(0,0,0,.2)" text="On" />
+          <option value="none" text="Off" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="showResponse1HoverColour" name="Show Response1 Hover Colour" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[This will change the colour of responses when hovered over]]></description>
+        <value><![CDATA[1]]></value>
+        <options>
+          <option value="1" text="Yes" />
+          <option value="0" text="No" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="response1HoverColourPrimary" name="Response1 Hover Colour Primary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[Primary colour of the item when hovered over]]></description>
+        <value><![CDATA[{%= Theme.WhiteColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response1HoverColourSecondary" name="Response1 Hover Colour Secondary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[Secondary colour of the item when hovered over]]></description>
+        <value><![CDATA[{%= Theme.WhiteColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="showResponse1HoverBorder" name="Show Response1 Hover Border" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[This will change the colour of the border of responses when hovered over]]></description>
+        <value><![CDATA[1]]></value>
+        <options>
+          <option value="1" text="Yes" />
+          <option value="0" text="No" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="response1HoverBorderColour" name="Response1 Hover Border Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[The border colour around the image of the response when hovered over]]></description>
+        <value><![CDATA[{%= Theme.NeutralDarkColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response1HoverBorderThickness" name="Response1 Hover Border Thickness" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The thickness of the border around the image of the response when hovered over]]></description>
+        <value><![CDATA[{%= Theme.BorderWidth %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response1HoverBorderStyle" name="Response1 Hover Border Style" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The style of the border around the image of the response when hovered over]]></description>
+        <value><![CDATA[solid]]></value>
+        <options>
+          <option value="none" text="None" />
+          <option value="solid" text="Solid" />
+          <option value="dashed" text="Dashed" />
+          <option value="dotted" text="Dotted" />
+          <option value="double" text="Double" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="response1HoverDropShadow" name="Response1 Hover Drop Shadow" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The visibility of a drop shadow under the image of the response when hovered over]]></description>
+        <value><![CDATA[0px 2px 4px rgba(0,0,0,.2)]]></value>
+        <options>
+          <option value="0px 2px 4px rgba(0,0,0,.2)" text="On" />
+          <option value="none" text="Off" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="response1SelectedColourPrimary" name="Response1 Selected Colour Primary" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+        <description><![CDATA[Primary colour of the selected item]]></description>
+        <value><![CDATA[{%= Theme.PrimaryColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response1SelectedColourSecondary" name="Response1 Selected Colour Secondary" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+        <description><![CDATA[Secondary colour of the selected item]]></description>
+        <value><![CDATA[{%= Theme.PrimaryColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response1SelectedBorderColour" name="Response1 Selected Border Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[The border colour around the image of the selected item]]></description>
+        <value><![CDATA[{%= Theme.NeutralDarkColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response1SelectedBorderThickness" name="Response1 Selected Border Thickness" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The thickness of the border around the image of the selected item]]></description>
+        <value><![CDATA[{%= Theme.BorderWidth %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response1SelectedBorderStyle" name="Response1 Selected Border Style" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The style of the border around the image of the selected item]]></description>
+        <value><![CDATA[solid]]></value>
+        <options>
+          <option value="none" text="None" />
+          <option value="solid" text="Solid" />
+          <option value="dashed" text="Dashed" />
+          <option value="dotted" text="Dotted" />
+          <option value="double" text="Double" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="response1SelectedDropShadow" name="Response1 Selected Drop Shadow" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The visibility of a drop shadow under the image of the selected item]]></description>
+        <value><![CDATA[none]]></value>
+        <options>
+          <option value="0px 2px 4px rgba(0,0,0,.2)" text="On" />
+          <option value="none" text="Off" />
+        </options>
+      </property>
+    </category>
+    <category id="secondresponse" name="Second Response">
+      <property xsi:type="standardProperty" id="response2ColourPrimary" name="Response2 Colour Primary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[Primary colour of the item]]></description>
+        <value><![CDATA[{%= Theme.NeutralLightColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response2ColourSecondary" name="Response2 Colour Secondary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[Secondary colour of the item]]></description>
+        <value><![CDATA[{%= Theme.NeutralLightColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response2BorderColour" name="Response2 Border Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[The border colour around the image of the response]]></description>
+        <value><![CDATA[{%= Theme.NeutralDarkColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response2BorderThickness" name="Response2 Border Thickness" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The thickness of the border around the image of the response]]></description>
+        <value><![CDATA[{%= Theme.BorderWidth %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response2BorderStyle" name="Response2 Border Style" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The style of the border around the image of the response]]></description>
+        <value><![CDATA[solid]]></value>
+        <options>
+          <option value="none" text="None" />
+          <option value="solid" text="Solid" />
+          <option value="dashed" text="Dashed" />
+          <option value="dotted" text="Dotted" />
+          <option value="double" text="Double" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="response2DropShadow" name="Response2 Drop Shadow" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The visibility of a drop shadow under the image of the response]]></description>
+        <value><![CDATA[none]]></value>
+        <options>
+          <option value="0px 2px 4px rgba(0,0,0,.2)" text="On" />
+          <option value="none" text="Off" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="showResponse2HoverColour" name="Show Response2 Hover Colour" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[This will change the colour of responses when hovered over]]></description>
+        <value><![CDATA[1]]></value>
+        <options>
+          <option value="1" text="Yes" />
+          <option value="0" text="No" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="response2HoverColourPrimary" name="Response2 Hover Colour Primary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[Primary colour of the item when hovered over]]></description>
+        <value><![CDATA[{%= Theme.WhiteColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response2HoverColourSecondary" name="Response2 Hover Colour Secondary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[Secondary colour of the item when hovered over]]></description>
+        <value><![CDATA[{%= Theme.WhiteColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="showResponse2HoverBorder" name="Show Response2 Hover Border" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[This will change the colour of the border of responses when hovered over]]></description>
+        <value><![CDATA[1]]></value>
+        <options>
+          <option value="1" text="Yes" />
+          <option value="0" text="No" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="response2HoverBorderColour" name="Response2 Hover Border Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[The border colour around the image of the response when hovered over]]></description>
+        <value><![CDATA[{%= Theme.NeutralDarkColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response2HoverBorderThickness" name="Response2 Hover Border Thickness" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The thickness of the border around the image of the response when hovered over]]></description>
+        <value><![CDATA[{%= Theme.BorderWidth %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response2HoverBorderStyle" name="Response2 Hover Border Style" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The style of the border around the image of the response when hovered over]]></description>
+        <value><![CDATA[solid]]></value>
+        <options>
+          <option value="none" text="None" />
+          <option value="solid" text="Solid" />
+          <option value="dashed" text="Dashed" />
+          <option value="dotted" text="Dotted" />
+          <option value="double" text="Double" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="response2HoverDropShadow" name="Response2 Hover Drop Shadow" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The visibility of a drop shadow under the image of the response when hovered over]]></description>
+        <value><![CDATA[0px 2px 4px rgba(0,0,0,.2)]]></value>
+        <options>
+          <option value="0px 2px 4px rgba(0,0,0,.2)" text="On" />
+          <option value="none" text="Off" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="response2SelectedColourPrimary" name="Response2 Selected Colour Primary" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+        <description><![CDATA[Primary colour of the selected item]]></description>
+        <value><![CDATA[{%= Theme.SecondaryColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response2SelectedColourSecondary" name="Response2 Selected Colour Secondary" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+        <description><![CDATA[Secondary colour of the selected item]]></description>
+        <value><![CDATA[{%= Theme.SecondaryColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response2SelectedBorderColour" name="Response2 Selected Border Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[The border colour around the image of the selected item]]></description>
+        <value><![CDATA[{%= Theme.NeutralDarkColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response2SelectedBorderThickness" name="Response2 Selected Border Thickness" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The thickness of the border around the image of the selected item]]></description>
+        <value><![CDATA[{%= Theme.BorderWidth %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="response2SelectedBorderStyle" name="Response2 Selected Border Style" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The style of the border around the image of the selected item]]></description>
+        <value><![CDATA[solid]]></value>
+        <options>
+          <option value="none" text="None" />
+          <option value="solid" text="Solid" />
+          <option value="dashed" text="Dashed" />
+          <option value="dotted" text="Dotted" />
+          <option value="double" text="Double" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="response2SelectedDropShadow" name="Response2 Selected Drop Shadow" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The visibility of a drop shadow under the image of the selected item]]></description>
+        <value><![CDATA[none]]></value>
+        <options>
+          <option value="0px 2px 4px rgba(0,0,0,.2)" text="On" />
+          <option value="none" text="Off" />
+        </options>
+      </property>
+    </category>
+  </properties>
 </control>

@@ -1,4 +1,4 @@
-﻿/* @charset "utf-8"; */
+/* @charset "utf-8"; */
 /* default.css */
 {%
 Dim fontSize = CurrentADC.PropValue("fontSize")
@@ -128,7 +128,7 @@ Dim response2SelectedDropShadow =CurrentADC.PropValue("response2SelectedDropShad
     {% EndIf %}
     transition: all ease-in-out .2s;
 }
-#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(1) label .imgWrapper {
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(1) label .imgWrapper img {
     box-shadow: {%= response1DropShadow %};
 }
 #adc_{%= CurrentADC.InstanceId %} .childOneHover {
@@ -165,7 +165,7 @@ Dim response2SelectedDropShadow =CurrentADC.PropValue("response2SelectedDropShad
         border: {%= response1BorderThickness %} {%= response1BorderStyle %} rgb({%= response1BorderColour %});
     {% EndIf %}
 }
-#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(1) label:hover .imgWrapper {
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(1) label:hover .imgWrapper img {
     box-shadow: {%= response1HoverDropShadow %};
 }
 #adc_{%= CurrentADC.InstanceId %} .childOneSelected {
@@ -190,7 +190,7 @@ Dim response2SelectedDropShadow =CurrentADC.PropValue("response2SelectedDropShad
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response1SelectedColourPrimary.ToHexa() %}', EndColorStr='{%= response1SelectedColourSecondary.ToHexa() %}');
     border: {%= response1SelectedBorderThickness %} {%= response1SelectedBorderStyle %} rgb({%= response1SelectedBorderColour %});
 }
-#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(1) input:checked ~ label .imgWrapper {
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(1) input:checked ~ label .imgWrapper img {
     box-shadow: {%= response1SelectedDropShadow %};
 }
 
@@ -227,7 +227,7 @@ Dim response2SelectedDropShadow =CurrentADC.PropValue("response2SelectedDropShad
     {% EndIf %}
     transition: all ease-in-out .2s;
 }
-#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(2) label .imgWrapper {
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(2) label .imgWrapper img {
     box-shadow: {%= response2DropShadow %};
 }
 #adc_{%= CurrentADC.InstanceId %} .childTwoHover {
@@ -264,7 +264,7 @@ Dim response2SelectedDropShadow =CurrentADC.PropValue("response2SelectedDropShad
         border: {%= response2BorderThickness %} {%= response2BorderStyle %} rgb({%= response2BorderColour %});
     {% EndIf %}
 }
-#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(2) label:hover .imgWrapper {
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(2) label:hover .imgWrapper img {
     box-shadow: {%= response2HoverDropShadow %};
 }
 #adc_{%= CurrentADC.InstanceId %} .childTwoSelected {
@@ -289,6 +289,6 @@ Dim response2SelectedDropShadow =CurrentADC.PropValue("response2SelectedDropShad
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='{%= response2SelectedColourPrimary.ToHexa() %}', EndColorStr='{%= response2SelectedColourSecondary.ToHexa() %}');
     border: {%= response2SelectedBorderThickness %} {%= response2SelectedBorderStyle %} rgb({%= response2SelectedBorderColour %});
 }
-#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(2) input:checked ~ label .imgWrapper {
+#adc_{%= CurrentADC.InstanceId %} .responseItem:nth-child(2) input:checked ~ label .imgWrapper img {
     box-shadow: {%= response2SelectedDropShadow %};
 }
