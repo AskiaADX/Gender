@@ -1,4 +1,4 @@
-﻿ (function() {
+ (function() {
         (function init() {
             polyfillGetElementsByClassName();
             var containers = document.getElementsByClassName("adc-gender");
@@ -46,6 +46,9 @@
         function checkIt() {
             var input = document.getElementById(this.htmlFor);
             input.click();
+            if (window.askia) {
+                askia.triggerAnswer();
+            }
         }
 
         function hasClass(ele, cls) {
