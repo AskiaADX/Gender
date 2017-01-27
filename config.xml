@@ -191,12 +191,8 @@
       </property>
     </category>
     <category id="firstresponse" name="First Response">
-      <property xsi:type="standardProperty" id="response1ColourPrimary" name="Response1 Colour Primary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
-        <description><![CDATA[Primary colour of the item]]></description>
-        <value><![CDATA[{%= Theme.NeutralLightColor %}]]></value>
-      </property>
-      <property xsi:type="standardProperty" id="response1ColourSecondary" name="Response1 Colour Secondary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
-        <description><![CDATA[Secondary colour of the item]]></description>
+      <property xsi:type="standardProperty" id="response1ColourPrimary" name="Response1 Background Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[Background colour of the item]]></description>
         <value><![CDATA[{%= Theme.NeutralLightColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="response1BorderColour" name="Response1 Border Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
@@ -234,12 +230,8 @@
           <option value="0" text="No" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="response1HoverColourPrimary" name="Response1 Hover Colour Primary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
-        <description><![CDATA[Primary colour of the item when hovered over]]></description>
-        <value><![CDATA[{%= Theme.WhiteColor %}]]></value>
-      </property>
-      <property xsi:type="standardProperty" id="response1HoverColourSecondary" name="Response1 Hover Colour Secondary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
-        <description><![CDATA[Secondary colour of the item when hovered over]]></description>
+      <property xsi:type="standardProperty" id="response1HoverColourPrimary" name="Response1 Hover Background Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[Background colour of the item when hovered over]]></description>
         <value><![CDATA[{%= Theme.WhiteColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="showResponse1HoverBorder" name="Show Response1 Hover Border" type="string" mode="dynamic" require="true" visible="false">
@@ -277,12 +269,8 @@
           <option value="none" text="Off" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="response1SelectedColourPrimary" name="Response1 Selected Colour Primary" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
-        <description><![CDATA[Primary colour of the selected item]]></description>
-        <value><![CDATA[{%= Theme.PrimaryColor %}]]></value>
-      </property>
-      <property xsi:type="standardProperty" id="response1SelectedColourSecondary" name="Response1 Selected Colour Secondary" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
-        <description><![CDATA[Secondary colour of the selected item]]></description>
+      <property xsi:type="standardProperty" id="response1SelectedColourPrimary" name="Response1 Selected Background Colour" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+        <description><![CDATA[Background colour of the selected item]]></description>
         <value><![CDATA[{%= Theme.PrimaryColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="response1SelectedBorderColour" name="Response1 Selected Border Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
@@ -314,12 +302,8 @@
       </property>
     </category>
     <category id="secondresponse" name="Second Response">
-      <property xsi:type="standardProperty" id="response2ColourPrimary" name="Response2 Colour Primary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
-        <description><![CDATA[Primary colour of the item]]></description>
-        <value><![CDATA[{%= Theme.NeutralLightColor %}]]></value>
-      </property>
-      <property xsi:type="standardProperty" id="response2ColourSecondary" name="Response2 Colour Secondary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
-        <description><![CDATA[Secondary colour of the item]]></description>
+      <property xsi:type="standardProperty" id="response2ColourPrimary" name="Response2 Background Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[Background colour of the item]]></description>
         <value><![CDATA[{%= Theme.NeutralLightColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="response2BorderColour" name="Response2 Border Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
@@ -357,12 +341,8 @@
           <option value="0" text="No" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="response2HoverColourPrimary" name="Response2 Hover Colour Primary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
-        <description><![CDATA[Primary colour of the item when hovered over]]></description>
-        <value><![CDATA[{%= Theme.WhiteColor %}]]></value>
-      </property>
-      <property xsi:type="standardProperty" id="response2HoverColourSecondary" name="Response2 Hover Colour Secondary" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
-        <description><![CDATA[Secondary colour of the item when hovered over]]></description>
+      <property xsi:type="standardProperty" id="response2HoverColourPrimary" name="Response2 Hover Background Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[Background colour of the item when hovered over]]></description>
         <value><![CDATA[{%= Theme.WhiteColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="showResponse2HoverBorder" name="Show Response2 Hover Border" type="string" mode="dynamic" require="true" visible="false">
@@ -400,12 +380,8 @@
           <option value="none" text="Off" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="response2SelectedColourPrimary" name="Response2 Selected Colour Primary" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
-        <description><![CDATA[Primary colour of the selected item]]></description>
-        <value><![CDATA[{%= Theme.SecondaryColor %}]]></value>
-      </property>
-      <property xsi:type="standardProperty" id="response2SelectedColourSecondary" name="Response2 Selected Colour Secondary" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
-        <description><![CDATA[Secondary colour of the selected item]]></description>
+      <property xsi:type="standardProperty" id="response2SelectedColourPrimary" name="Response2 Selected Background Colour" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+        <description><![CDATA[Background colour of the selected item]]></description>
         <value><![CDATA[{%= Theme.SecondaryColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="response2SelectedBorderColour" name="Response2 Selected Border Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
