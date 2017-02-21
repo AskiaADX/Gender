@@ -269,7 +269,7 @@
           <option value="none" text="Off" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="response1SelectedColourPrimary" name="Response1 Selected Background Colour" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+      <property xsi:type="standardProperty" id="response1SelectedColourPrimary" name="Response1 Selected Background Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[Background colour of the selected item]]></description>
         <value><![CDATA[{%= Theme.PrimaryColor %}]]></value>
       </property>
@@ -380,7 +380,7 @@
           <option value="none" text="Off" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="response2SelectedColourPrimary" name="Response2 Selected Background Colour" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+      <property xsi:type="standardProperty" id="response2SelectedColourPrimary" name="Response2 Selected Background Colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[Background colour of the selected item]]></description>
         <value><![CDATA[{%= Theme.SecondaryColor %}]]></value>
       </property>
