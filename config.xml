@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<control  xmlns="http://www.askia.com/2.0.0/ADCSchema"
+<control  xmlns="http://www.askia.com/2.1.0/ADCSchema"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://www.askia.com/2.0.0/ADCSchema https://raw.githubusercontent.com/AskiaADX/ADXSchema/2.0.0/ADCSchema.xsd"
-          version="2.0.0"
-          askiaCompat="5.3.3">
+          xsi:schemaLocation="http://www.askia.com/2.1.0/ADCSchema https://raw.githubusercontent.com/AskiaADX/ADXSchema/2.1.0/ADCSchema.xsd"
+          version="2.1.0"
+          askiaCompat="5.4.2">
   <info>
     <name>Gender</name>
     <guid>c43c39e9-a8f6-4f72-a22e-c6802429a10c</guid>
@@ -18,7 +18,6 @@
     <categories>
       <category>General</category>
     </categories>
-    <style width="0" height="0" />
     <constraints>
       <constraint on="questions" single="true" chapter="false" date="false" multiple="false" numeric="false" open="false" requireParentLoop="false" />
       <constraint on="controls" responseblock="true" checkbox="false" label="false" listbox="false" radiobutton="false" textbox="false" />
@@ -68,6 +67,7 @@
       <content fileName="default.css" type="css" mode="dynamic" position="head" />
       <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
       <content fileName="adc2-gender.js" type="javascript" mode="static" position="foot" />
+      <content fileName="Initializer.js" type="javascript" mode="dynamic" position="foot" />
       <content fileName="body-gender-female-dark.png" type="image" mode="static" position="none" />
       <content fileName="body-gender-female-light.png" type="image" mode="static" position="none" />
       <content fileName="body-gender-male-dark.png" type="image" mode="static" position="none" />
