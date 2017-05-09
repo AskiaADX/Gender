@@ -9,7 +9,7 @@
             inputs = container.getElementsByTagName("input"),
             autoFwd = (hasClass(container, "autoforward")) ? true : false;
         for (var i = 0, k = labels.length; i < k; i++) {
-            labels[i].onclick = checkIt;
+            //labels[i].onclick = checkIt;
             inputs[i].onclick = checkClass(i,autoFwd, currentQuestion);
             labels[i].onmouseover = hoverClass(i);
             labels[i].onmouseout = outClass(i);
