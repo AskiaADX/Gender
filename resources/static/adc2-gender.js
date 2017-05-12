@@ -7,10 +7,12 @@
         var container = document.getElementById("adc_" + this.instanceId);
         var labels = container.getElementsByTagName("label"),
             inputs = container.getElementsByTagName("input"),
+            imgs = container.getElementsByClassName("imgWrapper"),
             autoFwd = (hasClass(container, "autoforward")) ? true : false;
         for (var i = 0, k = labels.length; i < k; i++) {
             //labels[i].onclick = checkIt;
             inputs[i].onclick = checkClass(i,autoFwd, currentQuestion);
+            imgs[i].onclick = checkImg;
             labels[i].onmouseover = hoverClass(i);
             labels[i].onmouseout = outClass(i);
         }
@@ -85,6 +87,10 @@
             }  
             if (bool) document.getElementsByName("Next")[(document.getElementsByName("Next").length - 1)].click();
         }
+    }
+    
+    function checkImg() {
+            this.parentElement.click();
     }
 
     function hoverClass(index) {
