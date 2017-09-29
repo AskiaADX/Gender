@@ -7,7 +7,7 @@
   <info>
     <name>Gender</name>
     <guid>c43c39e9-a8f6-4f72-a22e-c6802429a10c</guid>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <date>2015-05-20</date>
     <description><![CDATA[Show 2 pictures, one for Male and one for Female.
                 Hardcoded list of 10 predefined set of pictures + ability to use customs]]></description>
@@ -139,11 +139,9 @@
         <description><![CDATA[When set this will define the margin/space between responses]]></description>
         <value><![CDATA[0 3px]]></value>
       </property>
-      <property xsi:type="standardProperty" id="controlAlign" name="Control Alignment" type="string" mode="static">
-        <description><![CDATA[
-                    The alignment of the control
-                ]]></description>
-        <value><![CDATA[left]]></value>
+      <property xsi:type="standardProperty" id="controlAlign" name="Control Alignment" type="string" mode="static" require="false" visible="true">
+        <description><![CDATA[The alignment of the control]]></description>
+        <value><![CDATA[center]]></value>
         <options>
           <option value="left" text="Left" />
           <option value="center" text="Center" />
