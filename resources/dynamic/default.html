@@ -1,4 +1,4 @@
-﻿{%
+{%
 Dim i
 Dim attrChecked
 Dim inputValue
@@ -55,7 +55,9 @@ pathImg.RemoveAt(1)
         <div class="responseItem" unselectable="on" onselectstart="return false;" onmousedown="return false;">
             <input type="radio" id="{%= inputId %}" name="{%= inputName %}" value="{%= inputValue %}" {%:= attrChecked %} /><br />
             <label for="{%= inputId %}">
-                <div class="imgWrapper"><img class="{%= clsImg %}" src="{%:= pathImg[i] %}"/></div>
+                
+                <div class="imgWrapper"><img class="{%= clsImg %}" src="{%:= pathImg[i] %}" alt="{%:= caption %}" {%if Interview.Scenario = "accessible" then %}hidden{%EndIf%}/></div>
+                
                 <span class="responseText">{%:= caption %}</span>
             </label>
             <div style="clear: both;"></div>

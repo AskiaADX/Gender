@@ -10,7 +10,8 @@
     <version>2.0.1</version>
     <date>2015-05-20</date>
     <description><![CDATA[Show 2 pictures, one for Male and one for Female.
-                Hardcoded list of 10 predefined set of pictures + ability to use customs]]></description>
+                Hardcoded list of 10 predefined set of pictures + ability to use customs
+				v2.0.2 - Add alt attribute to img]]></description>
     <company>Askia</company>
     <author><![CDATA[Jerome Duparc <jeromed@askia.com>]]></author>
     <site>http://www.askia.com</site>
@@ -88,6 +89,15 @@
       <content fileName="work-gender-male-avatar.png" type="image" mode="static" position="none" />
       <content fileName="young-gender-female-avatar.png" type="image" mode="static" position="none" />
       <content fileName="young-gender-male-avatar.png" type="image" mode="static" position="none" />
+    </output>
+    <output id="accessible">
+      <description><![CDATA[Fallback for web accessibility]]></description>
+      <condition><![CDATA[Interview.Scenario = "accessible"]]></condition>
+      <content fileName="styles.css" type="css" mode="static" position="head" />
+      <content fileName="default.css" type="css" mode="dynamic" position="head" />
+      <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
+      <content fileName="adc2-gender.js" type="javascript" mode="static" position="foot" />
+      <content fileName="Initializer.js" type="javascript" mode="dynamic" position="foot" />
     </output>
   </outputs>
   <properties>
