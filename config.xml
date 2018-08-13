@@ -11,7 +11,9 @@
     <date>2015-05-20</date>
     <description><![CDATA[Show 2 pictures, one for Male and one for Female.
                 Hardcoded list of 10 predefined set of pictures + ability to use customs
-				v2.0.2 - Add alt attribute to img]]></description>
+				v2.0.2 - Added alt attribute to img
+					   - Added scenarios accessible and normal
+					   - Added output accessible]]></description>
     <company>Askia</company>
     <author><![CDATA[Jerome Duparc <jeromed@askia.com>]]></author>
     <site>http://www.askia.com</site>
