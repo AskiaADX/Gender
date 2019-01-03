@@ -22,13 +22,13 @@
       <category>General</category>
     </categories>
     <constraints>
-      <constraint on="questions" single="true" chapter="false" date="false" multiple="false" numeric="false" open="false" requireParentLoop="false" RequireLoopDepth="0" />
+      <constraint on="questions" single="true" chapter="false" date="false" multiple="false" numeric="false" open="false" requireParentLoop="false" requireLoopDepth="0" />
       <constraint on="controls" responseblock="true" checkbox="false" label="false" listbox="false" radiobutton="false" textbox="false" />
       <constraint on="responses" min="2" max="2" />
     </constraints>
   </info>
   <outputs defaultOutput="fallback">
-    <output id="fallback" ManageLoopDepth="0">
+    <output id="fallback" manageLoopDepth="0">
       <description><![CDATA[
                 Fallback when the browser doesn't support Javascript
             ]]></description>
@@ -59,7 +59,7 @@
       <content fileName="young-gender-female-avatar.png" type="image" mode="static" position="none" />
       <content fileName="young-gender-male-avatar.png" type="image" mode="static" position="none" />
     </output>
-    <output id="standard" ManageLoopDepth="0">
+    <output id="standard" manageLoopDepth="0">
       <description><![CDATA[
                 Output when the browser support Javascript
             ]]></description>
@@ -92,7 +92,7 @@
       <content fileName="young-gender-female-avatar.png" type="image" mode="static" position="none" />
       <content fileName="young-gender-male-avatar.png" type="image" mode="static" position="none" />
     </output>
-    <output id="accessible" ManageLoopDepth="0">
+    <output id="accessible" manageLoopDepth="0">
       <description><![CDATA[Fallback for web accessibility]]></description>
       <condition><![CDATA[Interview.Scenario = "accessible"]]></condition>
       <content fileName="styles.css" type="css" mode="static" position="head" />
